@@ -1,36 +1,229 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Devit Nur Azaqi - Mobile Developer Portfolio
 
-## Getting Started
+A modern, professional portfolio website showcasing mobile development expertise, projects, and achievements.
 
-First, run the development server:
+![Portfolio Preview](https://img.shields.io/badge/Next.js-15.5.4-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.1.0-61dafb?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?style=for-the-badge&logo=tailwind-css)
+
+## ✨ Features
+
+### Design & UI
+- **Modern Design** with deep blue (#0A2647) and vibrant blue (#4E9FFF) color scheme
+- **Smooth Animations** powered by Framer Motion
+- **Dark Mode Toggle** with persistent theme
+- **Responsive Design** - works perfectly on all devices
+- **Custom Scrollbar** with accent colors
+- **Gradient Text Effects** for visual appeal
+
+### Sections
+1. **Hero Section** - Animated introduction with call-to-action buttons
+2. **About Section** - Professional background with achievement badges
+3. **Skills Section** - Technical skills with animated progress bars
+4. **Projects Section** - Featured projects with real data and metrics
+5. **Contact Section** - Interactive form with email/WhatsApp integration
+6. **Professional Footer** - Social links and credits
+
+### Interactive Elements
+- ✅ Floating WhatsApp button for instant contact
+- ✅ Dark mode toggle
+- ✅ Back to top button (appears on scroll)
+- ✅ Smooth scroll navigation
+- ✅ Active section highlighting in navbar
+- ✅ Hover animations on cards and buttons
+- ✅ Contact form with mailto integration
+
+## 🚀 Tech Stack
+
+- **Framework:** Next.js 15.5.4 with App Router
+- **UI Library:** React 19.1.0
+- **Language:** TypeScript 5
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Fonts:** Inter (Google Fonts)
+- **Build Tool:** Turbopack
+- **Linter/Formatter:** Biome
+
+## 📦 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd devit-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   ```
+   http://localhost:3000
+   ```
+
+## 🛠️ Available Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Development
+npm run dev          # Start development server with Turbopack
+
+# Production
+npm run build        # Build for production with Turbopack
+npm run start        # Start production server
+
+# Code Quality
+npm run lint         # Run Biome linter
+npm run format       # Format code with Biome
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+devit-portfolio/
+├── src/
+│   └── app/
+│       ├── page.tsx        # Main portfolio page (all sections)
+│       ├── layout.tsx      # Root layout with metadata
+│       ├── globals.css     # Global styles & theme
+│       └── favicon.ico     # Site icon
+├── public/                 # Static assets
+├── package.json           # Dependencies
+├── tsconfig.json          # TypeScript config
+├── biome.json            # Biome config
+└── next.config.ts        # Next.js config
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Customization
 
-## Learn More
+### Colors
+Edit the CSS variables in `src/app/globals.css`:
 
-To learn more about Next.js, take a look at the following resources:
+```css
+:root {
+  --primary: #0A2647;      /* Deep blue */
+  --accent: #4E9FFF;       /* Vibrant blue */
+  --secondary: #205295;    /* Medium blue */
+  /* ... */
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Content
+Update personal information in `src/app/page.tsx`:
+- Skills array
+- Projects array
+- Achievements data
+- Contact information
+- Social media links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Metadata
+Update SEO information in `src/app/layout.tsx`:
+- Title
+- Description
+- Keywords
+- Open Graph data
 
-## Deploy on Vercel
+## 📊 Key Metrics Highlighted
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **40%** Performance Improvements
+- **30%** Bug Reduction
+- **60%** Faster Testing
+- **5000+** Active Users (LMS Project)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 Projects Showcased
+
+1. **Learning Management System (LMS)**
+   - 5000+ active students
+   - Real-time course management
+   - Tech: Flutter, Laravel, PostgreSQL
+
+2. **E-Commerce Mobile Platform**
+   - Payment integration
+   - Real-time inventory
+   - Tech: React Native, Redux, Laravel
+
+3. **Point of Sale (POS) System**
+   - Offline-first architecture
+   - Multi-branch support
+   - Tech: Flutter, GetX, Supabase
+
+4. **Agriculture Management App**
+   - IoT sensor integration
+   - Weather forecasting
+   - Tech: Flutter, Laravel, MySQL
+
+## 🔧 Technical Skills
+
+- **Mobile:** Flutter, React Native
+- **Architecture:** Clean Architecture, MVVM
+- **State Management:** GetX, Redux
+- **Backend:** Laravel, Supabase
+- **Databases:** PostgreSQL, MySQL
+- **APIs:** RESTful API Integration
+- **Analysis:** System Analysis
+
+## 📱 Contact Integration
+
+### WhatsApp
+Update the phone number in `src/app/page.tsx`:
+```typescript
+href="https://wa.me/6281234567890"  // Replace with actual number
+```
+
+### Email
+Update the email address:
+```typescript
+href="mailto:devitazaqi@gmail.com"  // Replace with actual email
+```
+
+### Social Links
+Update profile URLs:
+- GitHub: `https://github.com/devvNA`
+- LinkedIn: `https://linkedin.com/in/devitnurazaqi`
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+1. Push code to GitHub
+2. Import project to Vercel
+3. Deploy automatically
+
+### Other Platforms
+```bash
+npm run build
+npm run start
+```
+
+## ⚡ Performance Features
+
+- **Server Components** for faster initial load
+- **Font Optimization** with Next.js Font
+- **Image Optimization** ready
+- **Code Splitting** automatic
+- **Turbopack** for faster builds
+
+## 🎭 Dark Mode
+
+Dark mode is implemented with CSS variables and can be toggled using the floating button. Theme preference is managed in component state and can be extended to use localStorage for persistence.
+
+## 📝 License
+
+This project is open source and available for personal use.
+
+## 👨‍💻 Developer
+
+**Devit Nur Azaqi**
+- Mobile Developer
+- 2+ years experience in Flutter & React Native
+- Specialized in Clean Architecture
+
+---
+
+Built with ❤️ using Next.js, Tailwind CSS & Framer Motion
