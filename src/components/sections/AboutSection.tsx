@@ -31,10 +31,10 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="relative w-full max-w-sm">
+            <div className="relative w-full max-w-xs">
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--secondary)] rounded-3xl rotate-6 opacity-20 blur-2xl"></div>
               <div className="relative bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-3xl p-1">
-                <div className="bg-[var(--card-bg)] rounded-3xl overflow-hidden aspect-[3/3.8]">
+                <div className="bg-[var(--card-bg)] rounded-3xl overflow-hidden aspect-[3/4]">
                   <Image
                     src="/images/profile.png"
                     alt="Devit Nur Azaqi"

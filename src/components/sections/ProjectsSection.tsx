@@ -22,7 +22,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="mx-auto grid grid-cols-3 gap-6 p-10">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:p-10">
           {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={index}
