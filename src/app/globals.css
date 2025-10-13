@@ -9,6 +9,7 @@
   --text-light: #64748b;
   --card-bg: #ffffff;
   --border: #e2e8f0;
+  --button: #094de0;
 }
 
 @theme inline {
@@ -53,7 +54,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 5px;
 }
 
