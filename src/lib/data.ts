@@ -32,7 +32,6 @@ export const projects = [
       "Real-time synchronization",
       "Advanced analytics dashboard",
     ],
-    impact: "40% improvement in student engagement",
     screenshots: [
       "/images/projects/kampus_gratis/ss-1.jpg",
       "/images/projects/kampus_gratis/ss-2.jpg",
@@ -43,13 +42,12 @@ export const projects = [
     title: "MV Shop (E-Commerce)",
     description:
       "An Android-based mobile e-commerce application that makes it easy for CV Marvelindo Utama outlets and sales staff to place orders and sell products accurately and in an integrated manner.",
-    tech: ["React Native", "Redux", "Laravel", "MySQL"],
+    tech: ["Flutter", "GetX", "Laravel", "MySQL"],
     achievements: [
       "Seamless payment integration",
       "Real-time inventory updates",
       "Push notification system",
     ],
-    impact: "30% reduction in cart abandonment",
     screenshots: [
       "/images/projects/ecommerce_marvelindo/ss-1.jpg",
       "/images/projects/ecommerce_marvelindo/ss-2.jpg",
@@ -59,14 +57,13 @@ export const projects = [
   {
     title: "Point of Sale (POS) System",
     description:
-      "Modern POS system with offline support, inventory management, and comprehensive reporting.",
-    tech: ["Flutter", "GetX", "Supabase", "PostgreSQL"],
+      "Multi-role POS app, built with React Native and Supabase (PostgreSQL), enables efficient sales, inventory management, and secure role-based access.",
+    tech: ["React Native", "Redux", "Supabase", "PostgreSQL"],
     achievements: [
       "Offline-first architecture",
       "Real-time sales analytics",
       "Multi-branch support",
     ],
-    impact: "60% faster transaction processing",
     screenshots: [
       "/images/projects/arka_pos/ss-1.jpg",
       "/images/projects/arka_pos/ss-2.jpg",
@@ -83,7 +80,6 @@ export const projects = [
       "Weather API integration",
       "Crop yield prediction",
     ],
-    impact: "25% increase in crop yield efficiency",
     screenshots: [
       "/images/projects/plantix/ss-1.png",
       "/images/projects/plantix/ss-2.png",
@@ -100,7 +96,6 @@ export const projects = [
       "Weather API integration",
       "Crop yield prediction",
     ],
-    impact: "25% increase in crop yield efficiency",
     screenshots: [
       "/images/projects/ksp_makarya/ss-1.jpg",
       "/images/projects/ksp_makarya/ss-2.jpg",

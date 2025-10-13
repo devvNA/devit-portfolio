@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: "Professional Mobile Developer with 2+ years of experience in Flutter and experience in React Native. Specialized in Clean Architecture, Laravel backend, and building scalable mobile applications.",
   keywords: ["Mobile Developer", "Flutter", "React Native", "Laravel", "Clean Architecture", "Devit Nur Azaqi"],
   authors: [{ name: "Devit Nur Azaqi" }],
+  // icons: {
+  //   icon: "/fav-icon.png",
+  // },
   openGraph: {
     title: "Devit Nur Azaqi - Mobile Developer Portfolio",
     description: "Professional Mobile Developer specializing in Flutter & React Native",

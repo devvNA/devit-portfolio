@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 bg-[var(--card-bg)]">
+    <section id="about" className="py-15 px-4 bg-[var(--card-bg)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,11 +34,11 @@ export function AboutSection() {
             <div className="relative w-full max-w-sm">
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--secondary)] rounded-3xl rotate-6 opacity-20 blur-2xl"></div>
               <div className="relative bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-3xl p-1">
-                <div className="bg-[var(--card-bg)] rounded-3xl overflow-hidden aspect-[1/1.2]">
+                <div className="bg-[var(--card-bg)] rounded-3xl overflow-hidden aspect-[3/3.8]">
                   <Image
-                    src="/images/profile.jpg"
+                    src="/images/profile.png"
                     alt="Devit Nur Azaqi"
-                    width={600}
+                    width={800}
                     height={800}
                     className="w-full h-full object-cover"
                     priority
@@ -63,7 +63,7 @@ export function AboutSection() {
             </p>
             <p className="text-[var(--text-light)] mb-4 leading-relaxed">
               My expertise extends to implementing Clean Architecture
-              patterns, state management solutions (GetX, Redux), and
+              patterns, state management solutions (GetX, Bloc, Redux), and
               integrating complex backend systems using Laravel and Supabase.
             </p>
             <p className="text-[var(--text-light)] mb-6 leading-relaxed">
@@ -88,7 +88,7 @@ export function AboutSection() {
                 <div>
                   <h4 className="font-semibold mb-1">Architecture</h4>
                   <p className="text-[var(--text-light)]">
-                    Clean Architecture, MVVM, GetX, Redux patterns
+                    Clean Architecture, MVVM, GetX, Bloc , Redux patterns
                   </p>
                 </div>
               </div>
