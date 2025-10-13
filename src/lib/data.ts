@@ -27,11 +27,6 @@ export const projects = [
     description:
       "LMS platform serving 500+ students with real-time course management, assessments, and progress tracking.",
     tech: ["Flutter", "API Integration", "Clean Architecture", "Bloc"],
-    achievements: [
-      "Served 5000+ active students",
-      "Real-time synchronization",
-      "Advanced analytics dashboard",
-    ],
     screenshots: [
       "/images/projects/kampus_gratis/ss-1.jpg",
       "/images/projects/kampus_gratis/ss-2.jpg",
@@ -42,12 +37,7 @@ export const projects = [
     title: "MV Shop (E-Commerce)",
     description:
       "An Android-based mobile e-commerce application that makes it easy for CV Marvelindo Utama outlets and sales staff to place orders and sell products accurately and in an integrated manner.",
-    tech: ["Flutter", "GetX", "Laravel", "MySQL"],
-    achievements: [
-      "Seamless payment integration",
-      "Real-time inventory updates",
-      "Push notification system",
-    ],
+    tech: ["Flutter", "GetX", "Laravel", "Clean Architecture", "MySQL", "Firebase"],
     screenshots: [
       "/images/projects/ecommerce_marvelindo/ss-1.jpg",
       "/images/projects/ecommerce_marvelindo/ss-2.jpg",
@@ -59,11 +49,6 @@ export const projects = [
     description:
       "Multi-role POS app, built with React Native and Supabase (PostgreSQL), enables efficient sales, inventory management, and secure role-based access.",
     tech: ["React Native", "Redux", "Supabase", "PostgreSQL"],
-    achievements: [
-      "Offline-first architecture",
-      "Real-time sales analytics",
-      "Multi-branch support",
-    ],
     screenshots: [
       "/images/projects/arka_pos/ss-1.jpg",
       "/images/projects/arka_pos/ss-2.jpg",
@@ -73,13 +58,8 @@ export const projects = [
   {
     title: "Plantix (Agriculture Management App)",
     description:
-      "IoT-integrated agriculture monitoring system with crop management, weather forecasting, and market price tracking.",
-    tech: ["Flutter", "Laravel", "API Integration", "MySQL"],
-    achievements: [
-      "IoT sensor integration",
-      "Weather API integration",
-      "Crop yield prediction",
-    ],
+      "An application that helps farmers manage their land, plan crops, analyze farming operations, organize schedules, and select agricultural products easily and in an integrated manner.",
+    tech: ["Flutter", "GetX", "Supabase", "API Integration", "PostgreSQL"],
     screenshots: [
       "/images/projects/plantix/ss-1.png",
       "/images/projects/plantix/ss-2.png",
@@ -89,13 +69,8 @@ export const projects = [
   {
     title: "KSP Makarya (Loan Management App)",
     description:
-      "IoT-integrated agriculture monitoring system with crop management, weather forecasting, and market price tracking.",
-    tech: ["Flutter", "Laravel", "API Integration", "MySQL"],
-    achievements: [
-      "IoT sensor integration",
-      "Weather API integration",
-      "Crop yield prediction",
-    ],
+      "This application digitizes the operations of the KSP Makarya cooperative with features for member management, transactions, and an approval system based on the roles of PDL, Verifier, and Leader.",
+    tech: ["Flutter", "GetX", "Laravel", "API Integration", "MySQL", "One Signal", "Firebase"],
     screenshots: [
       "/images/projects/ksp_makarya/ss-1.jpg",
       "/images/projects/ksp_makarya/ss-2.jpg",
@@ -105,13 +80,8 @@ export const projects = [
   {
     title: "Travelly (Tourism App)",
     description:
-      "IoT-integrated agriculture monitoring system with crop management, weather forecasting, and market price tracking.",
-    tech: ["Flutter", "Laravel", "API Integration", "MySQL"],
-    achievements: [
-      "IoT sensor integration",
-      "Weather API integration",
-      "Crop yield prediction",
-    ],
+      "Travelly is a mobile application that makes it easy for users to register, search, and purchase travel tickets and popular activity vouchers with booking features and a destination catalog.",
+    tech: ["Flutter", "Bloc", "Laravel", "API Integration", "MySQL", "Firebase"],
     impact: "25% increase in crop yield efficiency",
     screenshots: [
       "/images/projects/travelly/ss-1.jpg",
