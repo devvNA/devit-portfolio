@@ -174,7 +174,7 @@ Update SEO information in `src/app/layout.tsx`:
 ### WhatsApp
 Update the phone number in `src/app/page.tsx`:
 ```typescript
-href="https://wa.me/6281234567890"  // Replace with actual number
+href="https://wa.me/6282142185804"
 ```
 
 ### Email

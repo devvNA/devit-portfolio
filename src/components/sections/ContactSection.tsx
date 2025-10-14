@@ -76,7 +76,7 @@ export function ContactSection() {
 
               {/* Phone */}
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6282142185804"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 bg-[var(--background)] rounded-lg border border-[var(--border)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
