@@ -1,6 +1,5 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,28 +16,7 @@ export function Footer() {
           </div>
 
           <div className="flex gap-4">
-            <a
-              href="https://github.com/devitnurazaqi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 hover:text-[var(--accent)] transition-colors"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://linkedin.com/in/devitnurazaqi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 hover:text-[var(--accent)] transition-colors"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href="mailto:devitazaqi@gmail.com"
-              className="p-2 hover:text-[var(--accent)] transition-colors"
-            >
-              <Mail size={20} />
-            </a>
+
           </div>
         </div>
 
