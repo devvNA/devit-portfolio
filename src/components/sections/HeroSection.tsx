@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/Badge";
 import { motion } from "framer-motion";
 import {
   Briefcase,
@@ -14,8 +15,14 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 px-4"
+      className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden"
     >
+      {/* Background gradient */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--accent)]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--secondary)]/10 rounded-full blur-3xl"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -27,29 +34,28 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-2 mb-4"
+              className="inline-flex items-center gap-2 mb-6"
             >
-              <Sparkles className="text-[var(--accent)]" size={20} />
-              <span className="text-[var(--accent)] font-medium">
+              <Badge variant="accent" className="gap-1.5">
+                <Sparkles size={14} />
                 Welcome to my portfolio
-              </span>
+              </Badge>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl font-bold mb-4"
+              className="text-4xl md:text-6xl font-bold mb-4 tracking-tight"
             >
-              Hi, I'm{" "}
-              <span className="gradient-text">Devit Nur Azaqi</span>
+              Hi, I'm <span className="gradient-text">Devit Nur Azaqi</span>
             </motion.h1>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl md:text-3xl text-[var(--text-light)] mb-6"
+              className="text-2xl md:text-3xl text-[var(--text-light)] mb-6 font-medium"
             >
               Mobile Developer
             </motion.h2>
@@ -58,12 +64,13 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-lg text-[var(--text-light)] mb-8 leading-relaxed"
+              className="text-base md:text-lg text-[var(--text-light)] mb-8 leading-relaxed max-w-xl"
             >
-              Experienced Mobile Developer with 2+ years of expertise in
-              Flutter and experience in React Native. Specialized in Clean Architecture,
-              building scalable applications, and delivering exceptional user
-              experiences.
+              Graduate of Telkom University's Information Systems program with
+              over 2 years of experience in cross-platform mobile application
+              development. Specialized in implementing Clean Architecture,
+              client-server integration, and maintaining application quality
+              through structured testing and bug reporting.
             </motion.p>
 
             <motion.div
@@ -74,16 +81,16 @@ export function HeroSection() {
             >
               <a
                 href="#contact"
-                className="px-8 py-3 bg-[var(--button)] text-white rounded-lg hover:bg-[var(--secondary)] transition-all hover:scale-105 flex items-center gap-2"
+                className="btn btn-primary px-6 py-3 gap-2 text-sm"
               >
-                <Mail size={20} />
+                <Mail size={18} />
                 Get In Touch
               </a>
               <a
                 href="#projects"
-                className="px-8 py-3 border-2 border-[var(--accent)] text-[var(--accent)] rounded-lg hover:bg-[var(--accent)] hover:text-white transition-all hover:scale-105 flex items-center gap-2"
+                className="btn btn-outline px-6 py-3 gap-2 text-sm hover:border-[var(--accent)] hover:text-[var(--accent)]"
               >
-                <Briefcase size={20} />
+                <Briefcase size={18} />
                 View Projects
               </a>
             </motion.div>
@@ -92,44 +99,72 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="flex gap-4 mt-8"
+              className="flex gap-3 mt-8"
             >
               <a
                 href="https://github.com/devvNA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all hover:scale-110"
+                className="p-2.5 rounded-lg bg-[var(--card-bg)] border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
+                aria-label="GitHub"
               >
-                <Github size={24} />
+                <Github size={20} />
               </a>
               <a
                 href="https://linkedin.com/in/devitnurazaqi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all hover:scale-110"
+                className="p-2.5 rounded-lg bg-[var(--card-bg)] border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
+                aria-label="LinkedIn"
               >
-                <Linkedin size={24} />
+                <Linkedin size={20} />
               </a>
               <a
                 href="mailto:devitazaqi@gmail.com"
-                className="p-3 rounded-full bg-[var(--card-bg)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all hover:scale-110"
+                className="p-2.5 rounded-lg bg-[var(--card-bg)] border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
+                aria-label="Email"
               >
-                <Mail size={24} />
+                <Mail size={20} />
               </a>
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             className="relative hidden md:block"
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] to-[var(--secondary)] rounded-3xl rotate-6 opacity-20 blur-2xl"></div>
-              <div className="relative bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-3xl p-1">
-                <div className="bg-[var(--card-bg)] rounded-3xl p-8 h-full flex items-center justify-center">
-                  <Code size={200} className="text-[var(--accent)]" />
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/20 to-[var(--secondary)]/20 rounded-3xl blur-3xl"></div>
+
+              {/* Main card */}
+              <div className="relative card card-hover p-12 h-full flex items-center justify-center">
+                <div className="relative">
+                  <Code
+                    size={180}
+                    className="text-[var(--accent)] opacity-90"
+                    strokeWidth={1.5}
+                  />
+
+                  {/* Floating elements */}
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                    }}
+                    className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-[var(--accent)] to-[var(--secondary)] rounded-lg opacity-20"
+                  />
+                  <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Number.POSITIVE_INFINITY,
+                    }}
+                    className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-[var(--secondary)] to-[var(--accent)] rounded-full opacity-20"
+                  />
                 </div>
               </div>
             </div>

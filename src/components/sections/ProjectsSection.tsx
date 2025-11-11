@@ -1,28 +1,30 @@
 "use client";
 
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
 import { projects } from "@/lib/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-15 px-4 bg-[var(--card-bg)]">
+    <section id="projects" className="py-20 px-4 bg-[var(--muted)]/30">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-[var(--text-light)] text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--text-light)] text-base md:text-lg max-w-2xl mx-auto">
             Real-world applications delivering measurable business impact
           </p>
         </motion.div>
 
-        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:p-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={index}
@@ -30,48 +32,48 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-[var(--background)] rounded-xl border border-[var(--border)] overflow-hidden hover:border-[var(--accent)] transition-all hover:scale-105 mb-8"
             >
-              {/* Screenshots Grid */}
-              <div className="grid grid-cols-3 gap-4 p-4 bg-[var(--card-bg)]">
-                {project.screenshots.map((screenshot, i) => (
-                  <div
-                    key={i}
-                    className="relative w-full rounded-lg overflow-hidden border border-[var(--border)]"
-                  >
-                    <Image
-                      src={screenshot}
-                      alt={`${project.title} screenshot ${i + 1}`}
-                      width={600}
-                      height={700}
-                      className="w-full h-auto object-contain"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-[var(--text-light)] mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
+              <Card hover className="h-full overflow-hidden group">
+                {/* Screenshots Grid */}
+                <div className="grid grid-cols-3 gap-2 p-3 bg-[var(--muted)]/50">
+                  {project.screenshots.map((screenshot, i) => (
+                    <div
                       key={i}
-                      className="px-3 py-1 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full text-sm font-medium"
+                      className="relative w-full rounded-md overflow-hidden border border-[var(--border)] bg-white"
                     >
-                      {tech}
-                    </span>
+                      <Image
+                        src={screenshot}
+                        alt={`${project.title} screenshot ${i + 1}`}
+                        width={600}
+                        height={700}
+                        className="w-full h-auto object-contain"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
                   ))}
                 </div>
-              </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-[var(--text-light)] text-sm mb-4 leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.map((tech, i) => (
+                      <Badge key={i} variant="accent" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 }

@@ -19,6 +19,9 @@ export const skills = [
   { name: "MySQL", icon: Database, level: 85 },
   { name: "PostgreSQL", icon: Database, level: 85 },
   { name: "System Analysis", icon: Code, level: 80 },
+  { name: "Software Testing", icon: Code, level: 80 },
+  { name: "Quality Assurance", icon: Code, level: 80 },
+  { name: "Version Control (Git)", icon: Code, level: 90 },
 ];
 
 export const projects = [
@@ -37,7 +40,14 @@ export const projects = [
     title: "MV Shop (E-Commerce)",
     description:
       "An Android-based mobile e-commerce application that makes it easy for CV Marvelindo Utama outlets and sales staff to place orders and sell products accurately and in an integrated manner.",
-    tech: ["Flutter", "GetX", "Laravel", "Clean Architecture", "MySQL", "Firebase"],
+    tech: [
+      "Flutter",
+      "GetX",
+      "Laravel",
+      "Clean Architecture",
+      "MySQL",
+      "Firebase",
+    ],
     screenshots: [
       "/images/projects/ecommerce_marvelindo/ss-1.jpg",
       "/images/projects/ecommerce_marvelindo/ss-2.jpg",
@@ -70,7 +80,15 @@ export const projects = [
     title: "KSP Makarya (Loan Management App)",
     description:
       "This application digitizes the operations of the KSP Makarya cooperative with features for member management, transactions, and an approval system based on the roles of PDL, Verifier, and Leader.",
-    tech: ["Flutter", "GetX", "Laravel", "API Integration", "MySQL", "One Signal", "Firebase"],
+    tech: [
+      "Flutter",
+      "GetX",
+      "Laravel",
+      "API Integration",
+      "MySQL",
+      "One Signal",
+      "Firebase",
+    ],
     screenshots: [
       "/images/projects/ksp_makarya/ss-1.jpg",
       "/images/projects/ksp_makarya/ss-2.jpg",
@@ -81,7 +99,14 @@ export const projects = [
     title: "Travelly (Tourism App)",
     description:
       "Travelly is a mobile application that makes it easy for users to register, search, and purchase travel tickets and popular activity vouchers with booking features and a destination catalog.",
-    tech: ["Flutter", "Bloc", "Laravel", "API Integration", "MySQL", "Firebase"],
+    tech: [
+      "Flutter",
+      "Bloc",
+      "Laravel",
+      "API Integration",
+      "MySQL",
+      "Firebase",
+    ],
     impact: "25% increase in crop yield efficiency",
     screenshots: [
       "/images/projects/travelly/ss-1.jpg",

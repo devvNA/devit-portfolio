@@ -10,15 +10,27 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Devit Nur Azaqi - Mobile Developer Portfolio",
-  description: "Professional Mobile Developer with 2+ years of experience in Flutter and experience in React Native. Specialized in Clean Architecture, Laravel backend, and building scalable mobile applications.",
-  keywords: ["Mobile Developer", "Flutter", "React Native", "Laravel", "Clean Architecture", "Devit Nur Azaqi"],
+  description:
+    "Graduate of Telkom University's Information Systems program with over 2 years of experience in cross-platform mobile application development (Flutter/React Native). Implementing Clean Architecture, client-server integration, and passionate about AI-driven development.",
+  keywords: [
+    "Mobile Developer",
+    "Flutter",
+    "React Native",
+    "Clean Architecture",
+    "Telkom University",
+    "Information Systems",
+    "Cross-platform Development",
+    "AI Development",
+    "Devit Nur Azaqi",
+  ],
   authors: [{ name: "Devit Nur Azaqi" }],
   // icons: {
   //   icon: "/fav-icon.png",
   // },
   openGraph: {
     title: "Devit Nur Azaqi - Mobile Developer Portfolio",
-    description: "Professional Mobile Developer specializing in Flutter & React Native",
+    description:
+      "Graduate of Telkom University specializing in cross-platform mobile development with Flutter & React Native",
     type: "website",
   },
 };
@@ -30,7 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${inter.variable} antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

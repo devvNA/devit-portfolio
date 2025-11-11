@@ -6,8 +6,16 @@ import { useEffect, useState } from "react";
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure component is mounted
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
       const sections = ["home", "about", "skills", "projects", "contact"];
       const current = sections.find((section) => {
@@ -23,7 +31,7 @@ export function Navigation() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mounted]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--card-bg)]/80 backdrop-blur-lg border-b border-[var(--border)]">
@@ -42,10 +50,11 @@ export function Navigation() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`transition-colors ${activeSection === item.toLowerCase()
-                  ? "text-[var(--accent)]"
-                  : "text-[var(--text-light)] hover:text-[var(--accent)]"
-                  }`}
+                className={`transition-colors ${
+                  activeSection === item.toLowerCase()
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--text-light)] hover:text-[var(--accent)]"
+                }`}
               >
                 {item}
               </a>

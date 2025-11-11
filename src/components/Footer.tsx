@@ -1,6 +1,5 @@
 "use client";
 
-
 export function Footer() {
   return (
     <footer className="bg-[var(--card-bg)] border-t border-[var(--border)] py-8 px-4">
@@ -15,16 +14,16 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-4">
-
-          </div>
+          <div className="flex gap-4"></div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-[var(--border)] text-center text-sm text-[var(--text-light)]">
           <p>
             © {new Date().getFullYear()} Devit Nur Azaqi. All rights reserved.
           </p>
-          <p className="mt-2">Built with Next.js, Tailwind CSS & Framer Motion</p>
+          <p className="mt-2">
+            Built with Next.js, Tailwind CSS & Framer Motion
+          </p>
         </div>
       </div>
     </footer>
