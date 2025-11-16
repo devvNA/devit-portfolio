@@ -1,5 +1,6 @@
 name = "devit-portfolio"
 compatibility_date = "2024-11-16"
+compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
 [site]

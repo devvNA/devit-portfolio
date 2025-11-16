@@ -17,6 +17,16 @@ npx @cloudflare/next-on-pages@1
 .vercel/output/static
 ```
 
+### ⚠️ PENTING: Compatibility Flags
+Setelah deploy pertama kali, Anda perlu menambahkan compatibility flag:
+
+1. Buka Cloudflare Pages dashboard
+2. Pilih project Anda
+3. Pergi ke **Settings** → **Functions** → **Compatibility Flags**
+4. Tambahkan flag: `nodejs_compat`
+5. Klik **Save**
+6. Redeploy project Anda
+
 ### Environment variables (opsional)
 Jika Anda menggunakan EmailJS atau API keys lainnya, tambahkan di:
 - Settings → Environment variables
