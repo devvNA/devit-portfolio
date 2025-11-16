@@ -1,4 +1,4 @@
-# Devit Nur Azaqi - Mobile Developer Portfolio
+# HeyItsDevit - Mobile Developer Portfolio
 
 A modern, professional portfolio website showcasing mobile development expertise, projects, and achievements.
 

@@ -1,0 +1,26 @@
+# HeyItsDevit - Mobile Developer Portfolio
+# https://heyitsdevit.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /documents/
+
+# Sitemap
+Sitemap: https://heyitsdevit.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
