@@ -5,7 +5,7 @@ import { ChevronUp, MessageCircle, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function FloatingButtons() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -45,15 +45,15 @@ export function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-40">
+    <div className="fixed bottom-8 right-8 flex flex-col gap-3 z-40">
       {/* WhatsApp Button */}
       <motion.a
         href="https://wa.me/6282142185804"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
+        animate={{ scale: 0.92 }}
+        whileHover={{ scale: 1 }}
         className="p-4 bg-green-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all"
         title="Chat on WhatsApp"
       >
@@ -64,8 +64,8 @@ export function FloatingButtons() {
       <motion.button
         onClick={() => setIsDarkMode(!isDarkMode)}
         initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
+        animate={{ scale: 0.92 }}
+        whileHover={{ scale: 1 }}
         className="p-4 bg-[var(--accent)] text-white rounded-full shadow-lg hover:shadow-xl transition-all"
         title="Toggle Dark Mode"
       >
@@ -77,9 +77,9 @@ export function FloatingButtons() {
         <motion.button
           onClick={scrollToTop}
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          className="p-4 bg-[var(--primary)] text-white rounded-full shadow-lg hover:shadow-xl transition-all"
+          animate={{ scale: 0.92 }}
+          whileHover={{ scale: 1 }}
+          className="p-4 bg-amber-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all"
           title="Back to Top"
         >
           <ChevronUp size={24} />
