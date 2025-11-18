@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://heyitsdevit.com"),
   title: {
-    default: "HeyItsDevit - Mobile Developer Portfolio | Devit Nur Azaqi",
+    default: "Mobile Developer Portfolio | Devit Nur Azaqi",
     template: "%s | HeyItsDevit",
   },
   description:
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://heyitsdevit.com",
     siteName: "HeyItsDevit",
-    title: "HeyItsDevit - Mobile Developer Portfolio | Devit Nur Azaqi",
+    title: "Mobile Developer Portfolio | Devit Nur Azaqi",
     description:
       "Professional Mobile Developer specializing in Flutter & React Native. Building high-quality cross-platform applications with Clean Architecture.",
     images: [

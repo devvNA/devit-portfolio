@@ -1,4 +1,4 @@
-# HeyItsDevit - Mobile Developer Portfolio
+# Mobile Developer Portfolio
 # https://heyitsdevit.com
 
 User-agent: *

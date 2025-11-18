@@ -1,4 +1,4 @@
-# HeyItsDevit - Mobile Developer Portfolio
+# Mobile Developer Portfolio
 
 A modern, professional portfolio website showcasing mobile development expertise, projects, and achievements.
 
