@@ -2,28 +2,26 @@ import {
   Award,
   CheckCircle,
   Code,
-  Database,
-  Server,
+  PackageSearch,
   Smartphone,
   TrendingUp,
-  Users,
+  Users
 } from "lucide-react";
 
 export const skills = [
-  { name: "Flutter", icon: Smartphone, level: 95 },
-  { name: "React Native", icon: Code, level: 60 },
-  { name: "Clean Architecture", icon: Code, level: 88 },
-  { name: "Laravel", icon: Server, level: 80 },
-  { name: "API Integration", icon: Server, level: 95 },
-  { name: "Mobile Development", icon: Smartphone, level: 90 },
-  { name: "MySQL", icon: Database, level: 85 },
-  { name: "PostgreSQL", icon: Database, level: 85 },
-  { name: "System Analysis", icon: Code, level: 80 },
-  { name: "Software Testing", icon: Code, level: 80 },
-  { name: "Quality Assurance", icon: Code, level: 80 },
-  { name: "Version Control (Git)", icon: Code, level: 90 },
+  { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+  { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Clean Architecture", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Clean_Architecture_core.svg" },
+  { name: "Laravel", icon: "https://icon.icepanel.io/Technology/svg/Laravel.svg" },
+  { name: "API Integration", icon: "https://www.svgrepo.com/show/332640/api.svg" },
+  { name: "Mobile Development", icon: Smartphone },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { name: "System Analysis", icon: Code },
+  { name: "Software Testing", icon: PackageSearch },
+  { name: "Quality Assurance", icon: Code },
+  { name: "Version Control (Git)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
 ];
-
 export const projects = [
   {
     title: "Kampus Gratis (LMS)",
@@ -114,6 +112,39 @@ export const projects = [
       "/images/projects/travelly/ss-3.jpg",
     ],
   },
+  {
+    title: "Stenograph",
+    description:
+      "An application for message encryption and hiding within images using AES and RSA algorithms.",
+    tech: [
+      "Flutter",
+      "GetX",
+      "GetStorage",
+      "Image Picker",
+    ],
+    impact: "Enhanced data security with dual-layer encryption",
+    screenshots: [
+      "/images/projects/stenography/ss-1.png",
+      "/images/projects/stenography/ss-2.png",
+      "/images/projects/stenography/ss-3.png"
+    ],
+  },
+  {
+    title: "Landing Page - Utama Jaya",
+    description:
+      "This is a modern landing page website for a road paving service company serving the Barlingmascakeb region (Banjarnegara, Purbalingga, Banyumas, Cilacap, Kebumen).",
+    tech: [
+      "React + Typescript",
+      "Vite",
+      "Tailwind CSS",
+    ],
+    impact: "Enhanced data security with dual-layer encryption",
+    screenshots: [
+      "/images/projects/landing_page_utama_jaya/ss-1.png",
+      "/images/projects/landing_page_utama_jaya/ss-2.png",
+      "/images/projects/landing_page_utama_jaya/ss-3.png"
+    ],
+  },
 ];
 
 export const achievements = [
@@ -137,7 +168,7 @@ export const achievements = [
   },
   {
     icon: Users,
-    value: "5000+",
+    value: "100+",
     label: "Active Users",
     color: "text-orange-500",
   },

@@ -36,11 +36,19 @@ export function SkillsSection() {
                 className="p-5 flex flex-col items-center justify-center text-center group min-h-[120px]"
               >
                 <div className="p-3 bg-[var(--accent)]/10 rounded-xl group-hover:bg-[var(--accent)]/20 group-hover:scale-110 transition-all duration-300 mb-3">
-                  <skill.icon
-                    className="text-[var(--accent)]"
-                    size={28}
-                    strokeWidth={2}
-                  />
+                  {typeof skill.icon === "string" ? (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-7 h-7"
+                    />
+                  ) : (
+                    <skill.icon
+                      className="text-[var(--accent)]"
+                      size={28}
+                      strokeWidth={2}
+                    />
+                  )}
                 </div>
                 <h3 className="text-sm md:text-base font-semibold">
                   {skill.name}
