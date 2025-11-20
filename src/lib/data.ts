@@ -28,6 +28,7 @@ export const projects = [
     description:
       "LMS platform serving 500+ students with real-time course management, assessments, and progress tracking.",
     tech: ["Flutter", "API Integration", "Clean Architecture", "Bloc"],
+    link: "https://github.com/devvNA/kampus-gratis",
     screenshots: [
       "/images/projects/kampus_gratis/ss-1.jpg",
       "/images/projects/kampus_gratis/ss-2.jpg",
@@ -46,6 +47,7 @@ export const projects = [
       "MySQL",
       "Firebase",
     ],
+    link: "https://github.com/devvNA/ecommerce-marvelindo",
     screenshots: [
       "/images/projects/ecommerce_marvelindo/ss-1.jpg",
       "/images/projects/ecommerce_marvelindo/ss-2.jpg",
@@ -57,6 +59,7 @@ export const projects = [
     description:
       "Multi-role POS app, built with React Native and Supabase (PostgreSQL), enables efficient sales, inventory management, and secure role-based access.",
     tech: ["React Native", "Redux", "Supabase", "PostgreSQL"],
+    link: "https://github.com/devvNA/arka-pos",
     screenshots: [
       "/images/projects/arka_pos/ss-1.jpg",
       "/images/projects/arka_pos/ss-2.jpg",
@@ -68,6 +71,7 @@ export const projects = [
     description:
       "An application that helps farmers manage their land, plan crops, analyze farming operations, organize schedules, and select agricultural products easily and in an integrated manner.",
     tech: ["Flutter", "GetX", "Supabase", "API Integration", "PostgreSQL"],
+    link: "https://github.com/devvNA/plantix-app",
     screenshots: [
       "/images/projects/plantix/ss-1.png",
       "/images/projects/plantix/ss-2.png",
@@ -87,6 +91,7 @@ export const projects = [
       "One Signal",
       "Firebase",
     ],
+    link: "https://github.com/devvNA/ksp-makarya",
     screenshots: [
       "/images/projects/ksp_makarya/ss-1.jpg",
       "/images/projects/ksp_makarya/ss-2.jpg",
@@ -105,6 +110,7 @@ export const projects = [
       "MySQL",
       "Firebase",
     ],
+    link: "https://github.com/devvNA/travelly-app",
     impact: "25% increase in crop yield efficiency",
     screenshots: [
       "/images/projects/travelly/ss-1.jpg",
@@ -122,6 +128,7 @@ export const projects = [
       "GetStorage",
       "Image Picker",
     ],
+    link: "https://github.com/devvNA/stenograph-app",
     impact: "Enhanced data security with dual-layer encryption",
     screenshots: [
       "/images/projects/stenography/ss-1.png",
@@ -138,11 +145,33 @@ export const projects = [
       "Vite",
       "Tailwind CSS",
     ],
+    link: "https://aspalmurahpwt.vercel.app/",
     impact: "Enhanced data security with dual-layer encryption",
     screenshots: [
       "/images/projects/landing_page_utama_jaya/ss-1.png",
       "/images/projects/landing_page_utama_jaya/ss-2.png",
       "/images/projects/landing_page_utama_jaya/ss-3.png"
+    ],
+  },
+  {
+    title: "SIMPUSKLU App (Sistem Informasi Manajemen Puskesmas Kluwut)",
+    description:
+      "This is a modern landing page website for a road paving service company serving the Barlingmascakeb region (Banjarnegara, Purbalingga, Banyumas, Cilacap, Kebumen).",
+    tech: [
+      "Flutter",
+      "GetX",
+      "GetStorage",
+      "Material Design",
+      "MySQL",
+      "Laravel",
+      "REST API"
+    ],
+    link: "https://github.com/devvNA/be-puskesmas",
+    impact: "Enhanced data security with dual-layer encryption",
+    screenshots: [
+      "/images/projects/simpusklu/ss-1.png",
+      "/images/projects/simpusklu/ss-2.png",
+      "/images/projects/simpusklu/ss-3.png"
     ],
   },
 ];

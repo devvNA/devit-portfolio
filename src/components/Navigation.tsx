@@ -50,11 +50,10 @@ export function Navigation() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`transition-colors ${
-                  activeSection === item.toLowerCase()
-                    ? "text-[var(--accent)]"
-                    : "text-[var(--text-light)] hover:text-[var(--accent)]"
-                }`}
+                className={`transition-colors ${activeSection === item.toLowerCase()
+                  ? "text-[var(--accent)]"
+                  : "text-[var(--text-light)] hover:text-[var(--accent)]"
+                  }`}
               >
                 {item}
               </a>
@@ -63,8 +62,8 @@ export function Navigation() {
 
           <div className="flex items-center space-x-4">
             <a
-              href="/documents/Devit_Nur_Azaqi_CV.pdf"
-              download="Devit_Nur_Azaqi_CV.pdf"
+              href="/documents/Devit Nur Azaqi_CV.pdf"
+              download="Devit Nur Azaqi_CV.pdf"
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-[var(--button)] text-white rounded-lg hover:bg-[var(--secondary)] transition-colors"
             >
               <Download size={18} />

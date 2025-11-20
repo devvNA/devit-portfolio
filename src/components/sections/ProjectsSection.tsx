@@ -4,7 +4,9 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { projects } from "@/lib/data";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import NextLink from "next/link";
 
 export function ProjectsSection() {
   return (
@@ -54,10 +56,27 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 tracking-tight group-hover:text-[var(--accent)] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-[var(--text-light)] text-sm mb-4 leading-relaxed line-clamp-3">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-[var(--accent)] transition-colors flex-1">
+                      {project.title}
+                    </h3>
+                    {project.link && (
+                      <NextLink
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--secondary)] transition-colors group/link flex-shrink-0"
+                      >
+                        View
+                        <ExternalLink
+                          size={16}
+                          className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                        />
+                      </NextLink>
+                    )}
+                  </div>
+
+                  <p className="text-[var(--text-light)] text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
