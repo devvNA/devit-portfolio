@@ -1,3 +1,4 @@
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { StructuredData } from "@/components/StructuredData";
 // import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import type { Metadata } from "next";
@@ -102,6 +103,7 @@ export default function RootLayout({
         className={`${inter.variable} antialiased`}
         suppressHydrationWarning
       >
+        <AnimatedBackground />
         {children}
       </body>
     </html>

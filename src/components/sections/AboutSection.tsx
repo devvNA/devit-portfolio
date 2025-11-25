@@ -8,24 +8,24 @@ import Image from "next/image";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-[var(--text-light)] text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[var(--text-light)] text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Passionate about creating high-quality mobile applications that make
             a difference
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -33,8 +33,8 @@ export function AboutSection() {
             className="flex justify-center"
           >
             <div className="relative w-full max-w-xs">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/20 to-[var(--secondary)]/20 rounded-2xl blur-3xl"></div>
-              <Card hover className="relative overflow-hidden aspect-[3/4]">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--neon-primary)]/10 to-[var(--neon-secondary)]/10 rounded-2xl blur-3xl"></div>
+              <Card hover className="relative overflow-hidden aspect-[3/4] hover:shadow-[0_0_30px_rgba(0,255,136,0.15)]">
                 <Image
                   src="/images/profile.png"
                   alt="Devit Nur Azaqi"
@@ -77,9 +77,9 @@ export function AboutSection() {
             </p>
 
             <div className="space-y-3">
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--accent)] transition-colors">
-                <div className="p-2 bg-[var(--accent)]/10 rounded-lg group-hover:bg-[var(--accent)]/20 transition-colors">
-                  <Briefcase className="text-[var(--accent)]" size={20} />
+              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--neon-primary)] hover:shadow-[0_0_15px_rgba(0,255,136,0.1)] transition-all">
+                <div className="p-2 bg-[var(--neon-primary)]/10 rounded-lg group-hover:bg-[var(--neon-primary)]/20 transition-colors">
+                  <Briefcase className="text-[var(--neon-primary)]" size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm mb-0.5">Experience</h4>
@@ -89,9 +89,9 @@ export function AboutSection() {
                 </div>
               </Card>
 
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--accent)] transition-colors">
-                <div className="p-2 bg-[var(--accent)]/10 rounded-lg group-hover:bg-[var(--accent)]/20 transition-colors">
-                  <Code className="text-[var(--accent)]" size={20} />
+              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--neon-secondary)] hover:shadow-[0_0_15px_rgba(0,212,255,0.1)] transition-all">
+                <div className="p-2 bg-[var(--neon-secondary)]/10 rounded-lg group-hover:bg-[var(--neon-secondary)]/20 transition-colors">
+                  <Code className="text-[var(--neon-secondary)]" size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm mb-0.5">Architecture</h4>
@@ -101,9 +101,9 @@ export function AboutSection() {
                 </div>
               </Card>
 
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--accent)] transition-colors">
-                <div className="p-2 bg-[var(--accent)]/10 rounded-lg group-hover:bg-[var(--accent)]/20 transition-colors">
-                  <Server className="text-[var(--accent)]" size={20} />
+              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--tertiary)] hover:shadow-[0_0_15px_rgba(123,92,255,0.1)] transition-all">
+                <div className="p-2 bg-[var(--tertiary)]/10 rounded-lg group-hover:bg-[var(--tertiary)]/20 transition-colors">
+                  <Server className="text-[var(--tertiary)]" size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm mb-0.5">Backend</h4>
@@ -137,7 +137,7 @@ export function AboutSection() {
                   size={36}
                   strokeWidth={1.5}
                 />
-                <div className="text-2xl md:text-3xl font-bold mb-1">
+                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--neon-primary)]">
                   {achievement.value}
                 </div>
                 <div className="text-xs md:text-sm text-[var(--text-light)]">

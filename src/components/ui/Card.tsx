@@ -4,11 +4,16 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
+  neon?: boolean;
 }
 
-export function Card({ children, className = "", hover = false }: CardProps) {
+export function Card({ children, className = "", hover = false, neon = false }: CardProps) {
+  const baseClasses = "card";
+  const hoverClasses = hover ? "card-hover" : "";
+  const neonClasses = neon ? "neon-border" : "";
+  
   return (
-    <div className={`card ${hover ? "card-hover" : ""} ${className}`}>
+    <div className={`${baseClasses} ${hoverClasses} ${neonClasses} ${className}`}>
       {children}
     </div>
   );
