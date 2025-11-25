@@ -55,7 +55,7 @@ export function StructuredData() {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         dateCreated: "2024-01-01",
-        dateModified: new Date().toISOString(),
+        dateModified: "2025-11-25",
         mainEntity: {
             "@type": "Person",
             name: "Devit Nur Azaqi",

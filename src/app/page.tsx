@@ -10,12 +10,21 @@ import { SkillsSection } from "@/components/sections/SkillsSection";
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+      {/* Skip to content link for keyboard users */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+      
       <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      
+      <main id="main-content" tabIndex={-1}>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      
       <Footer />
       <FloatingButtons />
     </div>

@@ -254,13 +254,14 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary w-full px-6 py-3 gap-2 text-sm"
+                  className="btn btn-primary w-full px-6 py-3 min-h-[44px] gap-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                  aria-busy={isSubmitting}
                 >
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
                     <>
-                      <Send size={18} />
+                      <Send size={18} aria-hidden="true" />
                       Send Message
                     </>
                   )}
@@ -276,34 +277,36 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="flex justify-center gap-3 mt-12 pt-8 border-t border-[var(--border)]"
+          role="list"
+          aria-label="Social links"
         >
           <a
             href="https://github.com/devvNA"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
-            title="GitHub"
-            aria-label="GitHub"
+            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+            aria-label="Visit GitHub profile (opens in new tab)"
+            role="listitem"
           >
-            <Github size={20} />
+            <Github size={20} aria-hidden="true" />
           </a>
           <a
             href="https://linkedin.com/in/devitnurazaqi"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
-            title="LinkedIn"
-            aria-label="LinkedIn"
+            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+            aria-label="Visit LinkedIn profile (opens in new tab)"
+            role="listitem"
           >
-            <Linkedin size={20} />
+            <Linkedin size={20} aria-hidden="true" />
           </a>
           <a
             href="mailto:devitazaqi@gmail.com"
-            className="p-2.5 rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
-            title="Email"
-            aria-label="Email"
+            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:bg-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+            aria-label="Send email"
+            role="listitem"
           >
-            <Mail size={20} />
+            <Mail size={20} aria-hidden="true" />
           </a>
         </motion.div>
       </div>

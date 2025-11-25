@@ -45,7 +45,11 @@ export function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col gap-3 z-40">
+    <div
+      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 flex flex-col gap-3 z-40"
+      role="group"
+      aria-label="Quick actions"
+    >
       {/* WhatsApp Button */}
       <motion.a
         href="https://wa.me/6282142185804"
@@ -54,35 +58,38 @@ export function FloatingButtons() {
         initial={{ scale: 0 }}
         animate={{ scale: 0.92 }}
         whileHover={{ scale: 1 }}
-        className="p-4 bg-green-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all"
-        title="Chat on WhatsApp"
+        className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+        aria-label="Chat on WhatsApp"
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={24} aria-hidden="true" />
       </motion.a>
 
       {/* Dark Mode Toggle */}
       <motion.button
+        type="button"
         onClick={() => setIsDarkMode(!isDarkMode)}
         initial={{ scale: 0 }}
         animate={{ scale: 0.92 }}
         whileHover={{ scale: 1 }}
-        className="p-4 bg-[var(--accent)] text-white rounded-full shadow-lg hover:shadow-xl transition-all"
-        title="Toggle Dark Mode"
+        className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-[var(--accent)] text-white rounded-full shadow-lg hover:shadow-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+        aria-pressed={isDarkMode}
       >
-        {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+        {isDarkMode ? <Sun size={24} aria-hidden="true" /> : <Moon size={24} aria-hidden="true" />}
       </motion.button>
 
       {/* Back to Top */}
       {showScrollTop && (
         <motion.button
+          type="button"
           onClick={scrollToTop}
           initial={{ scale: 0 }}
           animate={{ scale: 0.92 }}
           whileHover={{ scale: 1 }}
-          className="p-4 bg-amber-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all"
-          title="Back to Top"
+          className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-amber-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          aria-label="Scroll to top of page"
         >
-          <ChevronUp size={24} />
+          <ChevronUp size={24} aria-hidden="true" />
         </motion.button>
       )}
     </div>

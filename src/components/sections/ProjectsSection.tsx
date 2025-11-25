@@ -65,12 +65,14 @@ export function ProjectsSection() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--secondary)] transition-colors group/link flex-shrink-0"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] text-sm font-medium text-[var(--accent)] hover:text-[var(--secondary)] transition-colors group/link flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-md"
+                        aria-label={`View ${project.title} project (opens in new tab)`}
                       >
                         View
                         <ExternalLink
                           size={16}
                           className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                          aria-hidden="true"
                         />
                       </NextLink>
                     )}

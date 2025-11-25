@@ -39,7 +39,8 @@ export function SkillsSection() {
                   {typeof skill.icon === "string" ? (
                     <img
                       src={skill.icon}
-                      alt={skill.name}
+                      alt=""
+                      aria-hidden="true"
                       className="w-7 h-7"
                     />
                   ) : (
@@ -47,6 +48,7 @@ export function SkillsSection() {
                       className="text-[var(--accent)]"
                       size={28}
                       strokeWidth={2}
+                      aria-hidden="true"
                     />
                   )}
                 </div>
