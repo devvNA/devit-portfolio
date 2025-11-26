@@ -109,16 +109,16 @@ export function Navigation() {
                   }
                 }}
                 className={`relative transition-all py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-sm ${activeSection === item.toLowerCase()
-                  ? "text-[var(--neon-primary)]"
+                  ? "text-white"
                   : "text-[var(--text-light)] hover:text-[var(--neon-primary)]"
                   }`}
-                style={activeSection === item.toLowerCase() ? { textShadow: '0 0 10px rgba(0, 255, 136, 0.5)' } : {}}
+                style={activeSection === item.toLowerCase() ? { textShadow: '0 0 10px rgba(59, 130, 246, 0.5)' } : {}}
               >
                 {activeSection === item.toLowerCase() && (
                   <motion.span
                     layoutId="activeSection"
                     className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[var(--neon-primary)] rounded-full"
-                    style={{ boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)' }}
+                    style={{ boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)' }}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}

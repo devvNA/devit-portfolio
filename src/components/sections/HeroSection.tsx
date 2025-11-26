@@ -72,7 +72,7 @@ export function HeroSection() {
           >
             <a
               href="#contact"
-              className="btn btn-primary px-6 py-3 min-h-[44px] text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+              className="btn btn-primary px-6 py-3 min-h-[44px] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
             >
               Get In Touch
             </a>

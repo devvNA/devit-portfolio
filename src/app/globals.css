@@ -37,7 +37,7 @@
   /* merah gelap elegan, bukan #ef4444 yang teriak */
   --radius: 0.5rem;
   /* dipertahankan */
-  --neon-primary: rgb(42, 65, 197);
+  --neon-primary: rgb(35, 58, 188);
   /* neon dibunuh, diganti primary baru */
   --neon-secondary: #6578be;
   /* sama */
@@ -220,7 +220,7 @@ body {
 
 .btn-primary {
   background: var(--neon-primary);
-  color: var(--background);
+  color: white;
   font-weight: 600;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
   transition: all 0.3s ease;
