@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #03050c;
+  --background: #04060c;
   /* lebih soft dari #02040a */
-  --foreground: #e2e8f0;
+  --foreground: #eaedf2;
   /* putih murni → abu sangat terang, kontras turun jadi ~12:1 */
   --primary: #4b6acb;
   /* biru mid-tone yang lebih muted & classy */
@@ -13,11 +13,11 @@
   /* blue-grey yang sangat tenang */
   --tertiary: #6b7280;
   /* grey-blue netral pengganti ungu liar */
-  --text-light: #cbd5e1;
+  --text-light: #eaf0f8;
   /* lebih lembut dari #e2e8f0 */
   --text-muted: #94a3b8;
   /* dipertahankan, sudah bagus */
-  --card-bg: #111827;
+  --card-bg: #080e1a;
   /* lebih terang 1 step, memberi kedalaman tanpa hitam pekat */
   --border: #1e293b;
   /* dipertahankan */
@@ -25,7 +25,7 @@
   /* sama dengan primary, konsisten */
   --input: #1e293b;
   /* dipertahankan */
-  --ring: #4b6acb;
+  --ring: #1f3e9a;
   /* sama dengan primary */
   --muted: #0f172a;
   /* dipertahankan */
@@ -37,11 +37,11 @@
   /* merah gelap elegan, bukan #ef4444 yang teriak */
   --radius: 0.5rem;
   /* dipertahankan */
-  --neon-primary: #4b6acb;
+  --neon-primary: rgb(42, 65, 197);
   /* neon dibunuh, diganti primary baru */
-  --neon-secondary: #647acb;
+  --neon-secondary: #6578be;
   /* sama */
-  --neon-tertiary: #6b7280;
+  --neon-tertiary: #737d8f;
   /* mati total efek neon */
 }
 
