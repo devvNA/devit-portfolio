@@ -18,7 +18,7 @@ export function ContactSection() {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    
+
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -26,19 +26,19 @@ export function ContactSection() {
     }
     if (!formData.subject.trim()) newErrors.subject = "Subject is required";
     if (!formData.message.trim()) newErrors.message = "Message is required";
-    
+
     return newErrors;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm();
-    
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-    
+
     setErrors({});
     setIsSubmitting(true);
     setSubmitSuccess(false);
@@ -205,7 +205,13 @@ export function ContactSection() {
                     htmlFor="name"
                     className="block text-sm font-medium mb-1.5"
                   >
-                    Your Name <span className="text-[var(--destructive)]" aria-label="required">*</span>
+                    Your Name{" "}
+                    <span
+                      className="text-[var(--destructive)]"
+                      aria-label="required"
+                    >
+                      *
+                    </span>
                   </label>
                   <input
                     id="name"
@@ -220,12 +226,17 @@ export function ContactSection() {
                       if (errors.name) setErrors({ ...errors, name: "" });
                     }}
                     className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.name ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5" : ""
+                      errors.name
+                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
+                        : ""
                     }`}
                     placeholder="John Doe"
                   />
                   {errors.name && (
-                    <p id="name-error" className="text-[var(--destructive)] text-xs mt-1">
+                    <p
+                      id="name-error"
+                      className="text-[var(--destructive)] text-xs mt-1"
+                    >
                       {errors.name}
                     </p>
                   )}
@@ -237,7 +248,13 @@ export function ContactSection() {
                     htmlFor="email"
                     className="block text-sm font-medium mb-1.5"
                   >
-                    Your Email <span className="text-[var(--destructive)]" aria-label="required">*</span>
+                    Your Email{" "}
+                    <span
+                      className="text-[var(--destructive)]"
+                      aria-label="required"
+                    >
+                      *
+                    </span>
                   </label>
                   <input
                     id="email"
@@ -252,12 +269,17 @@ export function ContactSection() {
                       if (errors.email) setErrors({ ...errors, email: "" });
                     }}
                     className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.email ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5" : ""
+                      errors.email
+                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
+                        : ""
                     }`}
                     placeholder="john@example.com"
                   />
                   {errors.email && (
-                    <p id="email-error" className="text-[var(--destructive)] text-xs mt-1">
+                    <p
+                      id="email-error"
+                      className="text-[var(--destructive)] text-xs mt-1"
+                    >
                       {errors.email}
                     </p>
                   )}
@@ -269,7 +291,13 @@ export function ContactSection() {
                     htmlFor="subject"
                     className="block text-sm font-medium mb-1.5"
                   >
-                    Subject <span className="text-[var(--destructive)]" aria-label="required">*</span>
+                    Subject{" "}
+                    <span
+                      className="text-[var(--destructive)]"
+                      aria-label="required"
+                    >
+                      *
+                    </span>
                   </label>
                   <input
                     id="subject"
@@ -277,19 +305,26 @@ export function ContactSection() {
                     type="text"
                     required
                     aria-required="true"
-                    aria-describedby={errors.subject ? "subject-error" : undefined}
+                    aria-describedby={
+                      errors.subject ? "subject-error" : undefined
+                    }
                     value={formData.subject}
                     onChange={(e) => {
                       setFormData({ ...formData, subject: e.target.value });
                       if (errors.subject) setErrors({ ...errors, subject: "" });
                     }}
                     className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.subject ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5" : ""
+                      errors.subject
+                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
+                        : ""
                     }`}
                     placeholder="Project Inquiry"
                   />
                   {errors.subject && (
-                    <p id="subject-error" className="text-[var(--destructive)] text-xs mt-1">
+                    <p
+                      id="subject-error"
+                      className="text-[var(--destructive)] text-xs mt-1"
+                    >
                       {errors.subject}
                     </p>
                   )}
@@ -301,14 +336,22 @@ export function ContactSection() {
                     htmlFor="message"
                     className="block text-sm font-medium mb-1.5"
                   >
-                    Message <span className="text-[var(--destructive)]" aria-label="required">*</span>
+                    Message{" "}
+                    <span
+                      className="text-[var(--destructive)]"
+                      aria-label="required"
+                    >
+                      *
+                    </span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     aria-required="true"
-                    aria-describedby={errors.message ? "message-error" : undefined}
+                    aria-describedby={
+                      errors.message ? "message-error" : undefined
+                    }
                     value={formData.message}
                     onChange={(e) => {
                       setFormData({ ...formData, message: e.target.value });
@@ -316,12 +359,17 @@ export function ContactSection() {
                     }}
                     rows={5}
                     className={`input textarea w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.message ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5" : ""
+                      errors.message
+                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
+                        : ""
                     }`}
                     placeholder="Tell me about your project..."
                   />
                   {errors.message && (
-                    <p id="message-error" className="text-[var(--destructive)] text-xs mt-1">
+                    <p
+                      id="message-error"
+                      className="text-[var(--destructive)] text-xs mt-1"
+                    >
                       {errors.message}
                     </p>
                   )}

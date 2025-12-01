@@ -34,13 +34,17 @@ export function AboutSection() {
           >
             <div className="relative w-full max-w-xs">
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--neon-primary)]/10 to-[var(--neon-secondary)]/10 rounded-2xl blur-3xl"></div>
-              <Card hover className="relative overflow-hidden aspect-[3/4] hover:shadow-[0_0_30px_rgba(0,255,136,0.15)]">
+              <Card
+                hover
+                className="relative overflow-hidden aspect-[3/4] hover:shadow-[0_0_30px_rgba(0,255,136,0.15)]"
+              >
                 <Image
                   src="/images/profile.png"
                   alt="Devit Nur Azaqi"
-                  width={800}
-                  height={800}
+                  width={320}
+                  height={427}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 280px, 320px"
                   priority
                 />
               </Card>
@@ -124,27 +128,19 @@ export function AboutSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card hover className="p-6 text-center group">
-                <achievement.icon
-                  className={`${achievement.color} mx-auto mb-3 group-hover:scale-110 transition-transform`}
-                  size={36}
-                  strokeWidth={1.5}
-                />
-                <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--neon-primary)]">
-                  {achievement.value}
-                </div>
-                <div className="text-xs md:text-sm text-[var(--text-light)]">
-                  {achievement.label}
-                </div>
-              </Card>
-            </motion.div>
+            <Card key={index} hover className="p-6 text-center group">
+              <achievement.icon
+                className={`${achievement.color} mx-auto mb-3 group-hover:scale-110 transition-transform`}
+                size={36}
+                strokeWidth={1.5}
+              />
+              <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--neon-primary)]">
+                {achievement.value}
+              </div>
+              <div className="text-xs md:text-sm text-[var(--text-light)]">
+                {achievement.label}
+              </div>
+            </Card>
           ))}
         </motion.div>
       </div>

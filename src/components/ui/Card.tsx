@@ -7,13 +7,20 @@ interface CardProps {
   neon?: boolean;
 }
 
-export function Card({ children, className = "", hover = false, neon = false }: CardProps) {
+export function Card({
+  children,
+  className = "",
+  hover = false,
+  neon = false,
+}: CardProps) {
   const baseClasses = "card";
   const hoverClasses = hover ? "card-hover" : "";
   const neonClasses = neon ? "neon-border" : "";
-  
+
   return (
-    <div className={`${baseClasses} ${hoverClasses} ${neonClasses} ${className}`}>
+    <div
+      className={`${baseClasses} ${hoverClasses} ${neonClasses} ${className}`}
+    >
       {children}
     </div>
   );

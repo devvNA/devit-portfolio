@@ -89,7 +89,11 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--neon-primary) 10%, var(--neon-tertiary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--neon-primary) 10%,
+    var(--neon-tertiary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -97,24 +101,34 @@ body {
 
 /* Neon utilities */
 .neon-glow {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.1);
 }
 
 .neon-glow-secondary {
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3), 0 0 40px rgba(96, 165, 250, 0.1);
+  box-shadow:
+    0 0 20px rgba(96, 165, 250, 0.3),
+    0 0 40px rgba(96, 165, 250, 0.1);
 }
 
 .neon-glow-tertiary {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.3),
+    0 0 40px rgba(139, 92, 246, 0.1);
 }
 
 .neon-text {
-  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor;
 }
 
 .neon-border {
   border-color: var(--neon-primary);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 10px rgba(59, 130, 246, 0.05);
+  box-shadow:
+    0 0 10px rgba(59, 130, 246, 0.3),
+    inset 0 0 10px rgba(59, 130, 246, 0.05);
 }
 
 /* Glass morphism effect */
@@ -228,7 +242,9 @@ body {
 
 .btn-primary:hover {
   background: var(--neon-primary);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(59, 130, 246, 0.2);
+  box-shadow:
+    0 0 25px rgba(59, 130, 246, 0.5),
+    0 0 50px rgba(59, 130, 246, 0.2);
   transform: translateY(-2px);
 }
 
@@ -271,7 +287,9 @@ body {
 .input:focus {
   outline: none;
   border-color: var(--neon-primary);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2), 0 0 15px rgba(59, 130, 246, 0.1);
+  box-shadow:
+    0 0 0 2px rgba(59, 130, 246, 0.2),
+    0 0 15px rgba(59, 130, 246, 0.1);
 }
 
 .input::placeholder {
@@ -303,7 +321,9 @@ body {
 .skip-to-content:focus {
   top: 1rem;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 /* Focus visible styles for WCAG 2.1 AA compliance */
@@ -331,7 +351,6 @@ select:focus-visible,
 
 /* Touch target optimization - minimum 44x44px for WCAG 2.1 AA */
 @media (pointer: coarse) {
-
   .btn,
   a.btn,
   button {
@@ -357,7 +376,6 @@ select:focus-visible,
 
 /* Reduced motion support for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -401,7 +419,6 @@ select:focus-visible,
 
 /* Mobile-specific accessibility improvements */
 @media (max-width: 640px) {
-
   /* Larger text for readability */
   body {
     font-size: 1rem;

@@ -14,9 +14,9 @@ export default function Portfolio() {
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>
-      
+
       <Navigation />
-      
+
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <AboutSection />
@@ -24,7 +24,7 @@ export default function Portfolio() {
         <ProjectsSection />
         <ContactSection />
       </main>
-      
+
       <Footer />
       <FloatingButtons />
     </div>

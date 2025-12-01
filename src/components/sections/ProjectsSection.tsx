@@ -10,7 +10,10 @@ import NextLink from "next/link";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--muted)]/30">
+    <section
+      id="projects"
+      className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--muted)]/30"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,74 +29,73 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+        >
           {projects.slice(0, 9).map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card hover className="h-full overflow-hidden group">
-                {/* Screenshots Grid */}
-                <div className="grid grid-cols-3 gap-2 p-3 bg-[var(--muted)]/50">
-                  {project.screenshots.map((screenshot, i) => (
-                    <div
-                      key={i}
-                      className="relative w-full rounded-md overflow-hidden border border-[var(--border)] bg-white"
+            <Card key={index} hover className="h-full overflow-hidden group">
+              {/* Screenshots Grid */}
+              <div className="grid grid-cols-3 gap-2 p-3 bg-[var(--muted)]/50">
+                {project.screenshots.map((screenshot, i) => (
+                  <div
+                    key={i}
+                    className="relative w-full rounded-md overflow-hidden border border-[var(--border)] bg-white"
+                  >
+                    <Image
+                      src={screenshot}
+                      alt={`${project.title} screenshot ${i + 1}`}
+                      width={120}
+                      height={160}
+                      className="w-full h-auto object-contain"
+                      sizes="100px"
+                      loading="lazy"
+                      quality={75}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-[var(--neon-primary)] transition-colors flex-1">
+                    {project.title}
+                  </h3>
+                  {project.link && (
+                    <NextLink
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] text-sm font-medium text-[var(--neon-primary)] hover:text-[var(--neon-secondary)] transition-colors group/link flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-md"
+                      aria-label={`View ${project.title} project (opens in new tab)`}
                     >
-                      <Image
-                        src={screenshot}
-                        alt={`${project.title} screenshot ${i + 1}`}
-                        width={600}
-                        height={700}
-                        className="w-full h-auto object-contain"
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                      View
+                      <ExternalLink
+                        size={16}
+                        className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                        aria-hidden="true"
                       />
-                    </div>
+                    </NextLink>
+                  )}
+                </div>
+
+                <p className="text-[var(--text-light)] text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((tech, i) => (
+                    <Badge key={i} variant="accent" className="text-xs">
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-[var(--neon-primary)] transition-colors flex-1">
-                      {project.title}
-                    </h3>
-                    {project.link && (
-                      <NextLink
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] text-sm font-medium text-[var(--neon-primary)] hover:text-[var(--neon-secondary)] transition-colors group/link flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-md"
-                        aria-label={`View ${project.title} project (opens in new tab)`}
-                      >
-                        View
-                        <ExternalLink
-                          size={16}
-                          className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
-                          aria-hidden="true"
-                        />
-                      </NextLink>
-                    )}
-                  </div>
-
-                  <p className="text-[var(--text-light)] text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((tech, i) => (
-                      <Badge key={i} variant="accent" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
+              </div>
+            </Card>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

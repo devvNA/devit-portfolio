@@ -2,7 +2,14 @@ import type { ReactNode } from "react";
 
 interface BadgeProps {
   children: ReactNode;
-  variant?: "default" | "primary" | "secondary" | "outline" | "accent" | "neon" | "neon-secondary";
+  variant?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "accent"
+    | "neon"
+    | "neon-secondary";
   className?: string;
 }
 

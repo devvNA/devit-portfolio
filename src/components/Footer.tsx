@@ -25,7 +25,10 @@ export function Footer() {
             © {new Date().getFullYear()} Devit Nur Azaqi. All rights reserved.
           </p>
           <p className="mt-2">
-            Built with <span className="text-[var(--neon-primary)]">Next.js</span>, <span className="text-[var(--neon-secondary)]">Tailwind CSS</span> & <span className="text-[var(--tertiary)]">Framer Motion</span>
+            Built with{" "}
+            <span className="text-[var(--neon-primary)]">Next.js</span>,{" "}
+            <span className="text-[var(--neon-secondary)]">Tailwind CSS</span> &{" "}
+            <span className="text-[var(--tertiary)]">Framer Motion</span>
           </p>
         </div>
       </div>

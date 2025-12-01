@@ -78,7 +78,7 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 bg-[var(--card-bg)]/90 backdrop-blur-xl border-b border-[var(--border)]"
       role="navigation"
       aria-label="Main navigation"
-      style={{ boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3)' }}
+      style={{ boxShadow: "0 4px 30px rgba(0, 0, 0, 0.3)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -99,7 +99,9 @@ export function Navigation() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 role="menuitem"
-                aria-current={activeSection === item.toLowerCase() ? "page" : undefined}
+                aria-current={
+                  activeSection === item.toLowerCase() ? "page" : undefined
+                }
                 onClick={(e) => {
                   e.preventDefault();
                   setActiveSection(item.toLowerCase());
@@ -108,17 +110,22 @@ export function Navigation() {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className={`relative transition-all py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-sm ${activeSection === item.toLowerCase()
-                  ? "text-white"
-                  : "text-[var(--text-light)] hover:text-[var(--neon-primary)]"
-                  }`}
-                style={activeSection === item.toLowerCase() ? { textShadow: '0 0 10px rgba(59, 130, 246, 0.5)' } : {}}
+                className={`relative transition-all py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] rounded-sm ${
+                  activeSection === item.toLowerCase()
+                    ? "text-white"
+                    : "text-[var(--text-light)] hover:text-[var(--neon-primary)]"
+                }`}
+                style={
+                  activeSection === item.toLowerCase()
+                    ? { textShadow: "0 0 10px rgba(59, 130, 246, 0.5)" }
+                    : {}
+                }
               >
                 {activeSection === item.toLowerCase() && (
                   <motion.span
                     layoutId="activeSection"
                     className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[var(--neon-primary)] rounded-full"
-                    style={{ boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)' }}
+                    style={{ boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)" }}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -135,7 +142,7 @@ export function Navigation() {
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 min-h-[44px] bg-[var(--neon-primary)] text-white font-semibold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
               aria-label="Download CV (opens in new tab)"
-              style={{ boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)' }}
+              style={{ boxShadow: "0 0 15px rgba(0, 255, 136, 0.3)" }}
             >
               <Download size={18} aria-hidden="true" />
               <span>Download CV</span>
@@ -179,16 +186,23 @@ export function Navigation() {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   role="menuitem"
-                  aria-current={activeSection === item.toLowerCase() ? "page" : undefined}
+                  aria-current={
+                    activeSection === item.toLowerCase() ? "page" : undefined
+                  }
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
-                  className={`block px-4 py-3 min-h-[44px] rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${activeSection === item.toLowerCase()
-                    ? "text-white bg-[var(--neon-primary)]/10 border-l-2 border-[var(--neon-primary)]"
-                    : "text-white hover:text-[var(--neon-primary)] hover:bg-[var(--muted)]"
-                    }`}
-                  style={activeSection === item.toLowerCase() ? { boxShadow: 'inset 0 0 20px rgba(0, 255, 136, 0.05)' } : {}}
+                  className={`block px-4 py-3 min-h-[44px] rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${
+                    activeSection === item.toLowerCase()
+                      ? "text-white bg-[var(--neon-primary)]/10 border-l-2 border-[var(--neon-primary)]"
+                      : "text-white hover:text-[var(--neon-primary)] hover:bg-[var(--muted)]"
+                  }`}
+                  style={
+                    activeSection === item.toLowerCase()
+                      ? { boxShadow: "inset 0 0 20px rgba(0, 255, 136, 0.05)" }
+                      : {}
+                  }
                 >
                   {item}
                 </a>
@@ -201,7 +215,7 @@ export function Navigation() {
                 rel="noopener noreferrer"
                 className="flex sm:hidden items-center justify-center gap-2 px-4 py-3 min-h-[44px] mt-4 bg-[var(--neon-primary)] text-white font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
                 aria-label="Download CV (opens in new tab)"
-                style={{ boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)' }}
+                style={{ boxShadow: "0 0 15px rgba(0, 255, 136, 0.3)" }}
               >
                 <Download size={18} aria-hidden="true" />
                 <span>Download CV</span>

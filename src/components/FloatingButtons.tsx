@@ -46,7 +46,7 @@ export function FloatingButtons() {
         animate={{ scale: 0.92 }}
         whileHover={{ scale: 1 }}
         className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-[var(--neon-primary)] text-white rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-        style={{ boxShadow: '0 0 20px rgba(0, 255, 136, 0.4)' }}
+        style={{ boxShadow: "0 0 20px rgba(0, 255, 136, 0.4)" }}
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={24} aria-hidden="true" />
@@ -61,7 +61,7 @@ export function FloatingButtons() {
           animate={{ scale: 0.92 }}
           whileHover={{ scale: 1 }}
           className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-[var(--neon-secondary)] text-[var(--background)] rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-secondary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-          style={{ boxShadow: '0 0 20px rgba(0, 212, 255, 0.4)' }}
+          style={{ boxShadow: "0 0 20px rgba(0, 212, 255, 0.4)" }}
           aria-label="Scroll to top of page"
         >
           <ChevronUp size={24} aria-hidden="true" />
