@@ -11,20 +11,20 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[var(--surface)]"
+      className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12 bg-[var(--surface)]"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-[var(--text-muted)] max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-lg mx-auto px-2">
             Real-world applications delivering measurable business impact
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ export function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
         >
           {projects.slice(0, 9).map((project, index) => (
             <Card
@@ -47,7 +47,7 @@ export function ProjectsSection() {
                 {project.screenshots.map((screenshot, i) => (
                   <div
                     key={i}
-                    className="relative aspect-[9/16] rounded-lg overflow-hidden bg-[var(--card-bg)] border border-[var(--border)]"
+                    className="relative aspect-[9/16] rounded overflow-hidden bg-[var(--card-bg)] border border-[var(--border)]"
                   >
                     <Image
                       src={screenshot}

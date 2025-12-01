@@ -8,20 +8,20 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12"
+      className="relative min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16"
     >
       {/* Subtle background gradient */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[var(--primary)]/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[var(--accent)]/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[var(--primary)]/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[var(--accent)]/5 rounded-full blur-[100px]" />
       </div>
 
-      <div className="max-w-3xl mx-auto w-full text-center">
+      <div className="w-full max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-6"
+          className="flex flex-col items-center text-center space-y-6"
         >
           {/* Badge */}
           <motion.div
@@ -39,10 +39,10 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-bold tracking-tight"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
           >
             <span className="text-[var(--text-primary)]">Hi, I'm </span>
-            <span className="gradient-text">Devit Nur Azaqi</span>
+            <span className="gradient-text">Devit</span>
           </motion.h1>
 
           {/* Role */}
@@ -60,7 +60,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-base sm:text-lg text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-[var(--text-muted)] max-w-xl leading-relaxed px-2"
           >
             Building high-quality cross-platform mobile applications with
             Flutter & React Native. Focused on clean architecture and
@@ -72,17 +72,17 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto pt-2"
           >
             <a
               href="#contact"
-              className="btn btn-primary px-8 py-3.5 text-base font-semibold"
+              className="btn btn-primary px-8 py-3.5 text-base font-semibold w-full sm:w-auto"
             >
               Get In Touch
             </a>
             <a
               href="#projects"
-              className="btn btn-outline px-8 py-3.5 text-base"
+              className="btn btn-outline px-8 py-3.5 text-base w-full sm:w-auto"
             >
               View Projects
             </a>
@@ -93,7 +93,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex gap-3 justify-center pt-6"
+            className="flex gap-3 justify-center pt-4"
           >
             <a
               href="https://github.com/devvNA"
@@ -138,11 +138,7 @@ export function HeroSection() {
             <span className="text-xs font-medium">Scroll</span>
             <motion.div
               animate={{ y: [0, 6, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
               <ArrowDown size={16} />
             </motion.div>

@@ -70,32 +70,32 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Get <span className="gradient-text">In Touch</span>
           </h2>
-          <p className="text-[var(--text-muted)] max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-lg mx-auto px-2">
             Have a project in mind? Let's discuss how we can work together.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-5 gap-6 lg:gap-10">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 space-y-3"
           >
-            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-4">
               Contact Information
             </h3>
 
@@ -152,11 +152,11 @@ export function ContactSection() {
             ))}
 
             {/* Why Work With Me */}
-            <Card className="p-5 mt-6 border-[var(--primary)]/20 bg-[var(--primary-muted)]">
-              <h4 className="font-semibold text-[var(--text-primary)] mb-4">
+            <Card className="p-4 sm:p-5 mt-4 border-[var(--primary)]/20 bg-[var(--primary-muted)]">
+              <h4 className="font-semibold text-[var(--text-primary)] mb-3 text-sm sm:text-base">
                 Why Work With Me?
               </h4>
-              <ul className="space-y-2.5 text-sm text-[var(--text-secondary)]">
+              <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-secondary)]">
                 {[
                   "2+ years professional experience",
                   "10+ successful applications",
@@ -164,7 +164,7 @@ export function ContactSection() {
                   "Fast communication & delivery",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-[var(--primary)] mt-0.5">✓</span>
+                    <span className="text-[var(--primary)] mt-0.5 flex-shrink-0">✓</span>
                     {item}
                   </li>
                 ))}
@@ -174,13 +174,13 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <Card className="p-6 sm:p-8">
-              <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
+            <Card className="p-5 sm:p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-5">
                 Send Message
               </h3>
 
@@ -190,12 +190,12 @@ export function ContactSection() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                      className="block text-xs sm:text-sm font-medium text-[var(--text-secondary)] mb-1.5"
                     >
                       Name *
                     </label>
@@ -220,7 +220,7 @@ export function ContactSection() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                      className="block text-xs sm:text-sm font-medium text-[var(--text-secondary)] mb-1.5"
                     >
                       Email *
                     </label>
@@ -247,7 +247,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                    className="block text-xs sm:text-sm font-medium text-[var(--text-secondary)] mb-1.5"
                   >
                     Subject *
                   </label>
@@ -273,7 +273,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
+                    className="block text-xs sm:text-sm font-medium text-[var(--text-secondary)] mb-1.5"
                   >
                     Message *
                   </label>
@@ -285,7 +285,7 @@ export function ContactSection() {
                       setFormData({ ...formData, message: e.target.value });
                       if (errors.message) setErrors({ ...errors, message: "" });
                     }}
-                    rows={5}
+                    rows={4}
                     className={`input textarea ${errors.message ? "border-[var(--destructive)]" : ""}`}
                     placeholder="Tell me about your project..."
                   />
@@ -299,7 +299,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary w-full py-3.5 gap-2 text-base font-semibold"
+                  className="btn btn-primary w-full py-3 sm:py-3.5 gap-2 text-sm sm:text-base font-semibold"
                 >
                   {isSubmitting ? (
                     "Sending..."
@@ -319,7 +319,7 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-4 mt-16 pt-8 border-t border-[var(--border)]"
+          className="flex justify-center gap-3 mt-12 pt-6 border-t border-[var(--border)]"
         >
           {[
             {

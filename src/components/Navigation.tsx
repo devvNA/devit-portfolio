@@ -64,15 +64,14 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-[var(--background)]/95 backdrop-blur-xl border-b border-[var(--border)] shadow-lg shadow-black/10"
           : "bg-transparent"
-      }`}
+        }`}
       role="navigation"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <motion.a
             href="#home"
@@ -93,11 +92,10 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(item);
                 }}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                  activeSection === item.toLowerCase()
+                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all ${activeSection === item.toLowerCase()
                     ? "text-[var(--primary)]"
                     : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface)]"
-                }`}
+                  }`}
               >
                 {activeSection === item.toLowerCase() && (
                   <motion.span
@@ -153,11 +151,10 @@ export function Navigation() {
                     e.preventDefault();
                     handleNavClick(item);
                   }}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    activeSection === item.toLowerCase()
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${activeSection === item.toLowerCase()
                       ? "text-[var(--primary)] bg-[var(--primary-muted)]"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface)]"
-                  }`}
+                    }`}
                 >
                   {item}
                 </a>

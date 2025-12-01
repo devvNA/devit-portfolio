@@ -29,41 +29,41 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-16 sm:py-24 px-6 sm:px-8 lg:px-12">
+      <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-[var(--text-muted)] max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-lg mx-auto px-2">
             Passionate about creating high-quality mobile applications
           </p>
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-20">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start mb-16">
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-2 flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--primary)]/20 to-[var(--accent)]/20 rounded-3xl blur-2xl" />
-              <div className="relative w-64 sm:w-72 aspect-[3/4] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card-bg)]">
+            <div className="relative w-48 sm:w-56 md:w-64">
+              <div className="absolute -inset-3 bg-gradient-to-br from-[var(--primary)]/20 to-[var(--accent)]/20 rounded-2xl blur-2xl" />
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card-bg)]">
                 <Image
                   src="/images/profile.png"
                   alt="Devit Nur Azaqi"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 256px, 288px"
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
                   priority
                 />
               </div>
@@ -72,16 +72,16 @@ export function AboutSection() {
 
           {/* Bio Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 space-y-6"
+            className="lg:col-span-3 space-y-5"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)] text-center lg:text-left">
               Mobile Development Specialist
             </h3>
 
-            <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <div className="space-y-3 text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
               <p>
                 A graduate of Telkom University's Information Systems program
                 with over 2 years of experience in cross-platform mobile
@@ -133,23 +133,23 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
           {achievements.map((achievement, index) => (
-            <Card key={index} hover className="p-6 text-center group">
-              <div className="mb-3 flex justify-center">
-                <div className="p-3 rounded-xl bg-[var(--surface)] group-hover:scale-110 transition-transform">
+            <Card key={index} hover className="p-4 sm:p-6 text-center group">
+              <div className="mb-2 sm:mb-3 flex justify-center">
+                <div className="p-2 sm:p-3 rounded-xl bg-[var(--surface)] group-hover:scale-110 transition-transform">
                   <achievement.icon
                     className={achievement.color}
-                    size={28}
+                    size={24}
                     strokeWidth={1.5}
                   />
                 </div>
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-1">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-0.5">
                 {achievement.value}
               </div>
-              <div className="text-xs sm:text-sm text-[var(--text-muted)]">
+              <div className="text-[10px] sm:text-xs md:text-sm text-[var(--text-muted)]">
                 {achievement.label}
               </div>
             </Card>
