@@ -7,120 +7,128 @@ import { Briefcase, Code, Server } from "lucide-react";
 import Image from "next/image";
 
 export function AboutSection() {
+  const highlights = [
+    {
+      icon: Briefcase,
+      title: "Experience",
+      description: "2+ years in Mobile Development",
+      color: "var(--primary)",
+    },
+    {
+      icon: Code,
+      title: "Architecture",
+      description: "Clean Architecture, MVVM, GetX, Bloc",
+      color: "var(--accent)",
+    },
+    {
+      icon: Server,
+      title: "Backend",
+      description: "Laravel, Supabase, PostgreSQL",
+      color: "var(--secondary)",
+    },
+  ];
+
   return (
-    <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-[var(--text-light)] text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
-            Passionate about creating high-quality mobile applications that make
-            a difference
+          <p className="text-[var(--text-muted)] max-w-lg mx-auto">
+            Passionate about creating high-quality mobile applications
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 sm:mb-16">
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-20">
+          {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="lg:col-span-2 flex justify-center"
           >
-            <div className="relative w-full max-w-xs">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--neon-primary)]/10 to-[var(--neon-secondary)]/10 rounded-2xl blur-3xl"></div>
-              <Card
-                hover
-                className="relative overflow-hidden aspect-[3/4] hover:shadow-[0_0_30px_rgba(0,255,136,0.15)]"
-              >
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-[var(--primary)]/20 to-[var(--accent)]/20 rounded-3xl blur-2xl" />
+              <div className="relative w-64 sm:w-72 aspect-[3/4] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card-bg)]">
                 <Image
                   src="/images/profile.png"
                   alt="Devit Nur Azaqi"
-                  width={320}
-                  height={427}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 280px, 320px"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 256px, 288px"
                   priority
                 />
-              </Card>
+              </div>
             </div>
           </motion.div>
 
+          {/* Bio Content */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="lg:col-span-3 space-y-6"
           >
-            <h3 className="text-2xl font-bold mb-4 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
               Mobile Development Specialist
             </h3>
-            <p className="text-[var(--text-light)] text-sm md:text-base mb-3 leading-relaxed">
-              A graduate of Telkom University's Information Systems program with
-              over 2 years of experience in cross-platform mobile application
-              development using Flutter and React Native. Specialized in
-              implementing Clean Architecture patterns to create robust and
-              scalable applications.
-            </p>
-            <p className="text-[var(--text-light)] text-sm md:text-base mb-3 leading-relaxed">
-              My expertise includes client-server integration, state management
-              solutions (GetX, Bloc, Redux), and working with backend systems
-              using Laravel and Supabase. I'm accustomed to performing thorough
-              application quality checks and compiling structured bug reports to
-              accelerate repairs and maintain high application quality.
-            </p>
-            <p className="text-[var(--text-light)] text-sm md:text-base mb-6 leading-relaxed">
-              Enthusiastic about learning new technologies, especially advances
-              in AI (Artificial Intelligence) to optimize the development
-              process and create innovative digital solutions that drive
-              business growth.
-            </p>
 
-            <div className="space-y-3">
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--neon-primary)] hover:shadow-[0_0_15px_rgba(0,255,136,0.1)] transition-all">
-                <div className="p-2 bg-[var(--neon-primary)]/10 rounded-lg group-hover:bg-[var(--neon-primary)]/20 transition-colors">
-                  <Briefcase className="text-[var(--neon-primary)]" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-0.5">Experience</h4>
-                  <p className="text-[var(--text-light)] text-sm">
-                    2+ years in Mobile Development
-                  </p>
-                </div>
-              </Card>
+            <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+              <p>
+                A graduate of Telkom University's Information Systems program
+                with over 2 years of experience in cross-platform mobile
+                application development using Flutter and React Native.
+              </p>
+              <p>
+                Specialized in implementing Clean Architecture patterns, state
+                management solutions (GetX, Bloc, Redux), and working with
+                backend systems using Laravel and Supabase.
+              </p>
+              <p>
+                Enthusiastic about learning new technologies, especially
+                advances in AI to optimize the development process and create
+                innovative digital solutions.
+              </p>
+            </div>
 
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--neon-secondary)] hover:shadow-[0_0_15px_rgba(0,212,255,0.1)] transition-all">
-                <div className="p-2 bg-[var(--neon-secondary)]/10 rounded-lg group-hover:bg-[var(--neon-secondary)]/20 transition-colors">
-                  <Code className="text-[var(--neon-secondary)]" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-0.5">Architecture</h4>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Clean Architecture, MVVM, GetX, Bloc , Redux patterns
-                  </p>
-                </div>
-              </Card>
-
-              <Card className="flex items-start gap-4 p-4 group hover:border-[var(--tertiary)] hover:shadow-[0_0_15px_rgba(123,92,255,0.1)] transition-all">
-                <div className="p-2 bg-[var(--tertiary)]/10 rounded-lg group-hover:bg-[var(--tertiary)]/20 transition-colors">
-                  <Server className="text-[var(--tertiary)]" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-0.5">Backend</h4>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Laravel, Supabase, PostgreSQL, MySQL, RESTful APIs
-                  </p>
-                </div>
-              </Card>
+            {/* Highlight Cards */}
+            <div className="grid gap-3 pt-4">
+              {highlights.map((item, index) => (
+                <Card
+                  key={index}
+                  className="flex items-center gap-4 p-4 hover:border-[var(--border-hover)] transition-all"
+                >
+                  <div
+                    className="p-2.5 rounded-xl"
+                    style={{
+                      backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`,
+                    }}
+                  >
+                    <item.icon size={20} style={{ color: item.color }} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[var(--text-primary)] text-sm">
+                      {item.title}
+                    </h4>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </Card>
+              ))}
             </div>
           </motion.div>
         </div>
 
-        {/* Achievement Badges */}
+        {/* Achievement Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,15 +137,19 @@ export function AboutSection() {
         >
           {achievements.map((achievement, index) => (
             <Card key={index} hover className="p-6 text-center group">
-              <achievement.icon
-                className={`${achievement.color} mx-auto mb-3 group-hover:scale-110 transition-transform`}
-                size={36}
-                strokeWidth={1.5}
-              />
-              <div className="text-2xl md:text-3xl font-bold mb-1 text-[var(--neon-primary)]">
+              <div className="mb-3 flex justify-center">
+                <div className="p-3 rounded-xl bg-[var(--surface)] group-hover:scale-110 transition-transform">
+                  <achievement.icon
+                    className={achievement.color}
+                    size={28}
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </div>
+              <div className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-1">
                 {achievement.value}
               </div>
-              <div className="text-xs md:text-sm text-[var(--text-light)]">
+              <div className="text-xs sm:text-sm text-[var(--text-muted)]">
                 {achievement.label}
               </div>
             </Card>

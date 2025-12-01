@@ -1,48 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #04060c;
-  /* lebih soft dari #02040a */
-  --foreground: #eaedf2;
-  /* putih murni → abu sangat terang, kontras turun jadi ~12:1 */
-  --primary: #4b6acb;
-  /* biru mid-tone yang lebih muted & classy */
-  --accent: #5b6ad0;
-  /* sedikit lebih terang dari primary, tetap dalam family */
-  --secondary: #647acb;
-  /* blue-grey yang sangat tenang */
-  --tertiary: #6b7280;
-  /* grey-blue netral pengganti ungu liar */
-  --text-light: #eaf0f8;
-  /* lebih lembut dari #e2e8f0 */
-  --text-muted: #94a3b8;
-  /* dipertahankan, sudah bagus */
-  --card-bg: #080e1a;
-  /* lebih terang 1 step, memberi kedalaman tanpa hitam pekat */
+  /* Clean, professional color palette */
+  --background: #0a0f1a;
+  --foreground: #f1f5f9;
+
+  /* Primary blues - softer, more professional */
+  --primary: #3b82f6;
+  --primary-soft: #60a5fa;
+  --primary-muted: rgba(59, 130, 246, 0.15);
+
+  /* Accent colors - subtle and harmonious */
+  --accent: #6366f1;
+  --accent-soft: #818cf8;
+  --secondary: #8b5cf6;
+  --tertiary: #a78bfa;
+
+  /* Text hierarchy */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  /* Surface colors */
+  --card-bg: #111827;
+  --card-bg-hover: #1e293b;
+  --surface: #0f172a;
+  --surface-elevated: #1e293b;
+
+  /* Borders */
   --border: #1e293b;
-  /* dipertahankan */
-  --button: #4b6acb;
-  /* sama dengan primary, konsisten */
-  --input: #1e293b;
-  /* dipertahankan */
-  --ring: #1f3e9a;
-  /* sama dengan primary */
-  --muted: #0f172a;
-  /* dipertahankan */
-  --muted-foreground: #94a3b8;
-  /* dipertahankan */
-  --accent-foreground: #ffffff;
-  /* dipertahankan */
-  --destructive: #b91c1c;
-  /* merah gelap elegan, bukan #ef4444 yang teriak */
-  --radius: 0.5rem;
-  /* dipertahankan */
-  --neon-primary: rgb(35, 58, 188);
-  /* neon dibunuh, diganti primary baru */
-  --neon-secondary: #6578be;
-  /* sama */
-  --neon-tertiary: #737d8f;
-  /* mati total efek neon */
+  --border-hover: #334155;
+  --border-active: var(--primary);
+
+  /* Functional */
+  --input-bg: #0f172a;
+  --destructive: #ef4444;
+  --success: #22c55e;
+
+  /* Radius */
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
 }
 
 @theme inline {
@@ -64,14 +62,12 @@ body {
   color: var(--foreground);
   font-family:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  line-height: 1.6;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -79,95 +75,57 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
+  background: var(--border);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: var(--border-hover);
 }
 
-/* Gradient text */
+/* Gradient text - softer */
 .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--neon-primary) 10%,
-    var(--neon-tertiary) 100%
+    var(--primary) 0%,
+    var(--accent) 50%,
+    var(--secondary) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Neon utilities */
-.neon-glow {
-  box-shadow:
-    0 0 20px rgba(59, 130, 246, 0.3),
-    0 0 40px rgba(59, 130, 246, 0.1);
+/* Subtle glow effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
 }
 
-.neon-glow-secondary {
-  box-shadow:
-    0 0 20px rgba(96, 165, 250, 0.3),
-    0 0 40px rgba(96, 165, 250, 0.1);
+.glow-accent {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
-.neon-glow-tertiary {
-  box-shadow:
-    0 0 20px rgba(139, 92, 246, 0.3),
-    0 0 40px rgba(139, 92, 246, 0.1);
-}
-
-.neon-text {
-  text-shadow:
-    0 0 10px currentColor,
-    0 0 20px currentColor;
-}
-
-.neon-border {
-  border-color: var(--neon-primary);
-  box-shadow:
-    0 0 10px rgba(59, 130, 246, 0.3),
-    inset 0 0 10px rgba(59, 130, 246, 0.05);
-}
-
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Smooth transitions */
-.transition-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Card styles inspired by shadcn/ui */
+/* Card styles - cleaner */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-hover {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  transition: all 0.2s ease;
 }
 
 .card-hover:hover {
-  border-color: var(--neon-primary);
-  box-shadow:
-    0 0 20px rgba(59, 130, 246, 0.15),
-    0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  background: var(--card-bg-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Badge styles */
+/* Badge styles - refined */
 .badge {
   display: inline-flex;
   align-items: center;
-  border-radius: calc(var(--radius) - 2px);
-  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 500;
   transition: all 0.2s;
@@ -175,54 +133,54 @@ body {
 }
 
 .badge-default {
-  background: var(--muted);
-  color: var(--muted-foreground);
+  background: var(--surface);
+  color: var(--text-secondary);
 }
 
 .badge-primary {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--primary-muted);
+  color: var(--primary-soft);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .badge-secondary {
-  background: var(--secondary);
-  color: white;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--secondary);
+  border-color: rgba(139, 92, 246, 0.2);
 }
 
 .badge-outline {
   background: transparent;
   border-color: var(--border);
-  color: var(--foreground);
+  color: var(--text-secondary);
 }
 
 .badge-accent {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--neon-primary);
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent-soft);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .badge-neon {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--neon-primary);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  background: var(--primary-muted);
+  color: var(--primary);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .badge-neon-secondary {
-  background: rgba(96, 165, 250, 0.1);
-  color: var(--neon-secondary);
-  border-color: rgba(96, 165, 250, 0.4);
-  box-shadow: 0 0 10px rgba(96, 165, 250, 0.2);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
-/* Button styles */
+/* Button styles - cleaner */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius);
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   cursor: pointer;
   border: 1px solid transparent;
 }
@@ -233,42 +191,37 @@ body {
 }
 
 .btn-primary {
-  background: var(--neon-primary);
+  background: var(--primary);
   color: white;
   font-weight: 600;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: var(--neon-primary);
-  box-shadow:
-    0 0 25px rgba(59, 130, 246, 0.5),
-    0 0 50px rgba(59, 130, 246, 0.2);
-  transform: translateY(-2px);
+  background: var(--primary-soft);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 .btn-outline {
   border-color: var(--border);
   background: transparent;
-  color: var(--foreground);
-  transition: all 0.3s ease;
+  color: var(--text-primary);
 }
 
 .btn-outline:hover {
-  border-color: var(--neon-primary);
-  color: var(--neon-primary);
-  background: rgba(59, 130, 246, 0.05);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-muted);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--foreground);
+  color: var(--text-secondary);
 }
 
 .btn-ghost:hover {
-  background: var(--muted);
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 /* Input styles */
@@ -277,32 +230,34 @@ body {
   width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--background);
-  padding: 0.5rem 0.75rem;
+  background: var(--input-bg);
+  padding: 0.75rem 1rem;
   font-size: 0.875rem;
   transition: all 0.2s;
-  color: var(--foreground);
+  color: var(--text-primary);
 }
 
 .input:focus {
   outline: none;
-  border-color: var(--neon-primary);
-  box-shadow:
-    0 0 0 2px rgba(59, 130, 246, 0.2),
-    0 0 15px rgba(59, 130, 246, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-muted);
 }
 
 .input::placeholder {
   color: var(--text-muted);
 }
 
-/* Textarea */
 .textarea {
-  min-height: 80px;
+  min-height: 120px;
   resize: vertical;
 }
 
-/* Skip to content link for keyboard users */
+/* Section backgrounds */
+.section-alt {
+  background: var(--surface);
+}
+
+/* Skip to content */
 .skip-to-content {
   position: absolute;
   top: -100%;
@@ -310,7 +265,7 @@ body {
   transform: translateX(-50%);
   z-index: 100;
   padding: 1rem 1.5rem;
-  background: var(--accent);
+  background: var(--primary);
   color: white;
   font-weight: 600;
   border-radius: var(--radius);
@@ -321,35 +276,19 @@ body {
 .skip-to-content:focus {
   top: 1rem;
   outline: none;
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.4),
-    0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-/* Focus visible styles for WCAG 2.1 AA compliance */
+/* Focus styles */
 *:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Remove default focus for mouse users */
 *:focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Enhanced focus styles for interactive elements */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--neon-primary);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Touch target optimization - minimum 44x44px for WCAG 2.1 AA */
+/* Touch targets */
 @media (pointer: coarse) {
   .btn,
   a.btn,
@@ -365,16 +304,7 @@ select:focus-visible,
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  :root {
-    --accent: #3b82f6;
-    --neon-primary: #3b82f6;
-    --border: #444444;
-  }
-}
-
-/* Reduced motion support for users who prefer it */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -386,7 +316,7 @@ select:focus-visible,
   }
 }
 
-/* Screen reader only class for accessibility */
+/* Screen reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -399,50 +329,23 @@ select:focus-visible,
   border: 0;
 }
 
-/* Screen reader only but focusable (for skip links) */
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
-
-/* Enhanced focus ring for better visibility */
-.focus-ring-enhanced {
-  outline: 3px solid var(--neon-primary);
-  outline-offset: 2px;
-}
-
-/* Mobile-specific accessibility improvements */
+/* Mobile improvements */
 @media (max-width: 640px) {
-  /* Larger text for readability */
   body {
     font-size: 1rem;
-    line-height: 1.6;
   }
 
-  /* Improved button spacing on mobile */
   button,
   a.btn {
     padding: 0.75rem 1rem;
     min-height: 48px;
   }
 
-  /* Better form input sizing */
   input,
   textarea,
   select {
     font-size: 1rem;
     padding: 0.75rem;
     min-height: 48px;
-  }
-
-  /* Improved link spacing for touch */
-  a {
-    padding: 0.25rem;
   }
 }

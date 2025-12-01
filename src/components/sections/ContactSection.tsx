@@ -18,7 +18,6 @@ export function ContactSection() {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -26,28 +25,20 @@ export function ContactSection() {
     }
     if (!formData.subject.trim()) newErrors.subject = "Subject is required";
     if (!formData.message.trim()) newErrors.message = "Message is required";
-
     return newErrors;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm();
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-
     setErrors({});
     setIsSubmitting(true);
-    setSubmitSuccess(false);
-
-    // Simulate form submission delay
     setTimeout(() => {
-      const mailtoLink = `mailto:devitazaqi@gmail.com?subject=${
-        formData.subject || `Portfolio Contact from ${formData.name}`
-      }&body=${formData.message}%0D%0A%0D%0AFrom: ${formData.name}%0D%0AEmail: ${formData.email}`;
+      const mailtoLink = `mailto:devitazaqi@gmail.com?subject=${formData.subject}&body=${formData.message}%0D%0A%0D%0AFrom: ${formData.name}%0D%0AEmail: ${formData.email}`;
       window.location.href = mailtoLink;
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -55,339 +46,266 @@ export function ContactSection() {
     }, 500);
   };
 
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "devitazaqi@gmail.com",
+      href: "mailto:devitazaqi@gmail.com",
+      color: "var(--primary)",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+62 821-4218-5804",
+      href: "https://wa.me/6282142185804",
+      color: "var(--accent)",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Purwokerto, Indonesia",
+      color: "var(--secondary)",
+    },
+  ];
+
   return (
-    <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Get <span className="gradient-text">In Touch</span>
           </h2>
-          <p className="text-[var(--text-light)] text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
-            Have a project in mind or want to discuss opportunities? Feel free
-            to reach out!
+          <p className="text-[var(--text-muted)] max-w-lg mx-auto">
+            Have a project in mind? Let's discuss how we can work together.
           </p>
         </motion.div>
-      </div>
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {/* Contact Information */}
+
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="lg:col-span-2 space-y-4"
           >
-            <h3 className="text-2xl font-bold mb-6 tracking-tight">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
               Contact Information
             </h3>
 
-            <div className="space-y-3">
-              {/* Email */}
-              <a href="mailto:devitazaqi@gmail.com">
-                <Card hover className="flex items-start gap-4 p-4 group">
-                  <div className="p-2.5 bg-[var(--neon-primary)]/10 rounded-lg group-hover:bg-[var(--neon-primary)]/20 group-hover:shadow-[0_0_10px_rgba(0,255,136,0.2)] transition-all">
-                    <Mail className="text-[var(--neon-primary)]" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-0.5">Email</h4>
-                    <p className="text-[var(--text-light)] text-sm group-hover:text-[var(--neon-primary)] transition-colors">
-                      devitazaqi@gmail.com
-                    </p>
-                  </div>
-                </Card>
-              </a>
-
-              {/* Phone */}
-              <a
-                href="https://wa.me/6282142185804"
-                target="_blank"
-                rel="noopener noreferrer"
+            {contactInfo.map((item, index) => (
+              <Card
+                key={index}
+                className="p-4 hover:border-[var(--border-hover)] transition-all"
               >
-                <Card hover className="flex items-start gap-4 p-4 group">
-                  <div className="p-2.5 bg-[var(--neon-secondary)]/10 rounded-lg group-hover:bg-[var(--neon-secondary)]/20 group-hover:shadow-[0_0_10px_rgba(0,212,255,0.2)] transition-all">
-                    <Phone className="text-[var(--neon-secondary)]" size={20} />
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 group"
+                  >
+                    <div
+                      className="p-2.5 rounded-xl"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`,
+                      }}
+                    >
+                      <item.icon size={20} style={{ color: item.color }} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        {item.label}
+                      </p>
+                      <p className="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--primary)] transition-colors">
+                        {item.value}
+                      </p>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="p-2.5 rounded-xl"
+                      style={{
+                        backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`,
+                      }}
+                    >
+                      <item.icon size={20} style={{ color: item.color }} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        {item.label}
+                      </p>
+                      <p className="text-sm font-medium text-[var(--text-secondary)]">
+                        {item.value}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-0.5">Phone</h4>
-                    <p className="text-[var(--text-light)] text-sm group-hover:text-[var(--neon-secondary)] transition-colors">
-                      +62 821-4218-5804
-                    </p>
-                  </div>
-                </Card>
-              </a>
-
-              {/* Location */}
-              <Card hover className="flex items-start gap-4 p-4 group">
-                <div className="p-2.5 bg-[var(--tertiary)]/10 rounded-lg group-hover:bg-[var(--tertiary)]/20 group-hover:shadow-[0_0_10px_rgba(123,92,255,0.2)] transition-all">
-                  <MapPin className="text-[var(--tertiary)]" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-0.5">Location</h4>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Purwokerto, Indonesia
-                  </p>
-                </div>
+                )}
               </Card>
-            </div>
+            ))}
 
             {/* Why Work With Me */}
-            <Card className="mt-6 p-5 border-[var(--neon-primary)]/30 bg-[var(--neon-primary)]/5">
-              <h4 className="text-lg font-bold mb-4 tracking-tight">
+            <Card className="p-5 mt-6 border-[var(--primary)]/20 bg-[var(--primary-muted)]">
+              <h4 className="font-semibold text-[var(--text-primary)] mb-4">
                 Why Work With Me?
               </h4>
-              <div className="space-y-2.5">
-                <div className="flex items-start gap-2.5">
-                  <span className="text-[var(--neon-primary)] mt-0.5 flex-shrink-0 font-bold">
-                    ✓
-                  </span>
-                  <p className="text-[var(--text-light)] text-sm">
-                    2+ years of professional mobile development experience
-                  </p>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <span className="text-[var(--neon-primary)] mt-0.5 flex-shrink-0 font-bold">
-                    ✓
-                  </span>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Proven track record with 10+ successful applications
-                  </p>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <span className="text-[var(--neon-primary)] mt-0.5 flex-shrink-0 font-bold">
-                    ✓
-                  </span>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Clean code and best practices guaranteed
-                  </p>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <span className="text-[var(--neon-primary)] mt-0.5 flex-shrink-0 font-bold">
-                    ✓
-                  </span>
-                  <p className="text-[var(--text-light)] text-sm">
-                    Fast communication and project delivery
-                  </p>
-                </div>
-              </div>
+              <ul className="space-y-2.5 text-sm text-[var(--text-secondary)]">
+                {[
+                  "2+ years professional experience",
+                  "10+ successful applications",
+                  "Clean code & best practices",
+                  "Fast communication & delivery",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-[var(--primary)] mt-0.5">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </Card>
           </motion.div>
 
-          {/* Send Message Form */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="lg:col-span-3"
           >
-            <Card className="p-6">
-              <h3 className="text-2xl font-bold mb-6 tracking-tight">
+            <Card className="p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
                 Send Message
               </h3>
 
               {submitSuccess && (
-                <div
-                  className="mb-4 p-3 bg-[var(--neon-primary)]/10 border border-[var(--neon-primary)]/30 rounded-lg text-[var(--neon-primary)] text-sm"
-                  role="alert"
-                  aria-live="polite"
-                >
-                  Thank you! Email client will open with your message.
+                <div className="mb-6 p-4 bg-[var(--primary-muted)] border border-[var(--primary)]/30 rounded-xl text-[var(--primary)] text-sm">
+                  Email client will open with your message.
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Your Name */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Your Name{" "}
-                    <span
-                      className="text-[var(--destructive)]"
-                      aria-label="required"
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
                     >
-                      *
-                    </span>
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    aria-required="true"
-                    aria-describedby={errors.name ? "name-error" : undefined}
-                    value={formData.name}
-                    onChange={(e) => {
-                      setFormData({ ...formData, name: e.target.value });
-                      if (errors.name) setErrors({ ...errors, name: "" });
-                    }}
-                    className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.name
-                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
-                        : ""
-                    }`}
-                    placeholder="John Doe"
-                  />
-                  {errors.name && (
-                    <p
-                      id="name-error"
-                      className="text-[var(--destructive)] text-xs mt-1"
+                      Name *
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => {
+                        setFormData({ ...formData, name: e.target.value });
+                        if (errors.name) setErrors({ ...errors, name: "" });
+                      }}
+                      className={`input ${errors.name ? "border-[var(--destructive)]" : ""}`}
+                      placeholder="John Doe"
+                    />
+                    {errors.name && (
+                      <p className="text-[var(--destructive)] text-xs mt-1">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
                     >
-                      {errors.name}
-                    </p>
-                  )}
+                      Email *
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => {
+                        setFormData({ ...formData, email: e.target.value });
+                        if (errors.email) setErrors({ ...errors, email: "" });
+                      }}
+                      className={`input ${errors.email ? "border-[var(--destructive)]" : ""}`}
+                      placeholder="john@example.com"
+                    />
+                    {errors.email && (
+                      <p className="text-[var(--destructive)] text-xs mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                {/* Your Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Your Email{" "}
-                    <span
-                      className="text-[var(--destructive)]"
-                      aria-label="required"
-                    >
-                      *
-                    </span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    aria-required="true"
-                    aria-describedby={errors.email ? "email-error" : undefined}
-                    value={formData.email}
-                    onChange={(e) => {
-                      setFormData({ ...formData, email: e.target.value });
-                      if (errors.email) setErrors({ ...errors, email: "" });
-                    }}
-                    className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.email
-                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
-                        : ""
-                    }`}
-                    placeholder="john@example.com"
-                  />
-                  {errors.email && (
-                    <p
-                      id="email-error"
-                      className="text-[var(--destructive)] text-xs mt-1"
-                    >
-                      {errors.email}
-                    </p>
-                  )}
-                </div>
-
-                {/* Subject */}
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium mb-1.5"
+                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
                   >
-                    Subject{" "}
-                    <span
-                      className="text-[var(--destructive)]"
-                      aria-label="required"
-                    >
-                      *
-                    </span>
+                    Subject *
                   </label>
                   <input
                     id="subject"
-                    name="subject"
                     type="text"
                     required
-                    aria-required="true"
-                    aria-describedby={
-                      errors.subject ? "subject-error" : undefined
-                    }
                     value={formData.subject}
                     onChange={(e) => {
                       setFormData({ ...formData, subject: e.target.value });
                       if (errors.subject) setErrors({ ...errors, subject: "" });
                     }}
-                    className={`input w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.subject
-                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
-                        : ""
-                    }`}
+                    className={`input ${errors.subject ? "border-[var(--destructive)]" : ""}`}
                     placeholder="Project Inquiry"
                   />
                   {errors.subject && (
-                    <p
-                      id="subject-error"
-                      className="text-[var(--destructive)] text-xs mt-1"
-                    >
+                    <p className="text-[var(--destructive)] text-xs mt-1">
                       {errors.subject}
                     </p>
                   )}
                 </div>
 
-                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium mb-1.5"
+                    className="block text-sm font-medium text-[var(--text-secondary)] mb-2"
                   >
-                    Message{" "}
-                    <span
-                      className="text-[var(--destructive)]"
-                      aria-label="required"
-                    >
-                      *
-                    </span>
+                    Message *
                   </label>
                   <textarea
                     id="message"
-                    name="message"
                     required
-                    aria-required="true"
-                    aria-describedby={
-                      errors.message ? "message-error" : undefined
-                    }
                     value={formData.message}
                     onChange={(e) => {
                       setFormData({ ...formData, message: e.target.value });
                       if (errors.message) setErrors({ ...errors, message: "" });
                     }}
                     rows={5}
-                    className={`input textarea w-full px-3 py-2.5 text-sm transition-colors ${
-                      errors.message
-                        ? "border-[var(--destructive)]/50 bg-[var(--destructive)]/5"
-                        : ""
-                    }`}
+                    className={`input textarea ${errors.message ? "border-[var(--destructive)]" : ""}`}
                     placeholder="Tell me about your project..."
                   />
                   {errors.message && (
-                    <p
-                      id="message-error"
-                      className="text-[var(--destructive)] text-xs mt-1"
-                    >
+                    <p className="text-[var(--destructive)] text-xs mt-1">
                       {errors.message}
                     </p>
                   )}
                 </div>
 
-                {/* Send Button */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary w-full px-6 py-3 min-h-[48px] gap-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-                  aria-busy={isSubmitting}
+                  className="btn btn-primary w-full py-3.5 gap-2 text-base font-semibold"
                 >
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
                     <>
-                      <Send size={18} aria-hidden="true" />
-                      Send Message
+                      <Send size={18} /> Send Message
                     </>
                   )}
                 </button>
@@ -401,38 +319,32 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-3 sm:gap-4 mt-12 pt-8 border-t border-[var(--border)]"
-          role="list"
-          aria-label="Social links"
+          className="flex justify-center gap-4 mt-16 pt-8 border-t border-[var(--border)]"
         >
-          <a
-            href="https://github.com/devvNA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:border-[var(--neon-primary)] hover:text-[var(--neon-primary)] hover:shadow-[0_0_15px_rgba(0,255,136,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-            aria-label="Visit GitHub profile (opens in new tab)"
-            role="listitem"
-          >
-            <Github size={20} aria-hidden="true" />
-          </a>
-          <a
-            href="https://linkedin.com/in/devitnurazaqi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:border-[var(--neon-secondary)] hover:text-[var(--neon-secondary)] hover:shadow-[0_0_15px_rgba(0,212,255,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-secondary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-            aria-label="Visit LinkedIn profile (opens in new tab)"
-            role="listitem"
-          >
-            <Linkedin size={20} aria-hidden="true" />
-          </a>
-          <a
-            href="mailto:devitazaqi@gmail.com"
-            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-[var(--border)] hover:border-[var(--tertiary)] hover:text-[var(--tertiary)] hover:shadow-[0_0_15px_rgba(123,92,255,0.2)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tertiary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-            aria-label="Send email"
-            role="listitem"
-          >
-            <Mail size={20} aria-hidden="true" />
-          </a>
+          {[
+            {
+              icon: Github,
+              href: "https://github.com/devvNA",
+              label: "GitHub",
+            },
+            {
+              icon: Linkedin,
+              href: "https://linkedin.com/in/devitnurazaqi",
+              label: "LinkedIn",
+            },
+            { icon: Mail, href: "mailto:devitazaqi@gmail.com", label: "Email" },
+          ].map((social, i) => (
+            <a
+              key={i}
+              href={social.href}
+              target={social.href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className="p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text-muted)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all"
+              aria-label={social.label}
+            >
+              <social.icon size={20} />
+            </a>
+          ))}
         </motion.div>
       </div>
     </section>

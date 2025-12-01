@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ChevronUp, MessageCircle } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUp, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function FloatingButtons() {
@@ -16,57 +16,50 @@ export function FloatingButtons() {
     if (!mounted) return;
 
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      setShowScrollTop(window.scrollY > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
-  if (!mounted) {
-    return null;
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  if (!mounted) return null;
 
   return (
-    <div
-      className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 flex flex-col gap-3 z-40"
-      role="group"
-      aria-label="Quick actions"
-    >
-      {/* WhatsApp Button */}
+    <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
+      {/* WhatsApp */}
       <motion.a
         href="https://wa.me/6282142185804"
         target="_blank"
         rel="noopener noreferrer"
-        initial={{ scale: 0 }}
-        animate={{ scale: 0.92 }}
-        whileHover={{ scale: 1 }}
-        className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-[var(--neon-primary)] text-white rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-        style={{ boxShadow: "0 0 20px rgba(0, 255, 136, 0.4)" }}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="p-3.5 bg-[#25D366] text-white rounded-full shadow-lg shadow-[#25D366]/30 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle size={24} aria-hidden="true" />
+        <MessageCircle size={22} />
       </motion.a>
 
       {/* Back to Top */}
-      {showScrollTop && (
-        <motion.button
-          type="button"
-          onClick={scrollToTop}
-          initial={{ scale: 0 }}
-          animate={{ scale: 0.92 }}
-          whileHover={{ scale: 1 }}
-          className="p-3 sm:p-4 min-w-[44px] min-h-[44px] flex items-center justify-center bg-[var(--neon-secondary)] text-[var(--background)] rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-secondary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
-          style={{ boxShadow: "0 0 20px rgba(0, 212, 255, 0.4)" }}
-          aria-label="Scroll to top of page"
-        >
-          <ChevronUp size={24} aria-hidden="true" />
-        </motion.button>
-      )}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="p-3.5 bg-[var(--primary)] text-white rounded-full shadow-lg shadow-[var(--primary)]/30 hover:shadow-xl hover:shadow-[var(--primary)]/40 transition-shadow"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={22} />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
