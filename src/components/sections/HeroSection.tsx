@@ -28,7 +28,7 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 mb-6"
           >
-            <Badge variant="neon">
+            <Badge variant="neon-secondary">
               Welcome to my portfolio
             </Badge>
           </motion.div>

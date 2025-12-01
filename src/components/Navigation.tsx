@@ -130,7 +130,7 @@ export function Navigation() {
           <div className="flex items-center space-x-4">
             {/* Download CV Button */}
             <a
-              href="https://drive.google.com/file/d/1KhKMTYPnmB8trt7SPR0maj9U3UV3p91O/view?usp=sharing"
+              href="https://drive.google.com/drive/folders/1LBikNUREEVwR1hsi85QRSbUzQdF8gij0?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 min-h-[44px] bg-[var(--neon-primary)] text-white font-semibold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
@@ -185,8 +185,8 @@ export function Navigation() {
                     handleNavClick(item);
                   }}
                   className={`block px-4 py-3 min-h-[44px] rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${activeSection === item.toLowerCase()
-                    ? "text-[var(--neon-primary)] bg-[var(--neon-primary)]/10 border-l-2 border-[var(--neon-primary)]"
-                    : "text-[var(--text-light)] hover:text-[var(--neon-primary)] hover:bg-[var(--muted)]"
+                    ? "text-white bg-[var(--neon-primary)]/10 border-l-2 border-[var(--neon-primary)]"
+                    : "text-white hover:text-[var(--neon-primary)] hover:bg-[var(--muted)]"
                     }`}
                   style={activeSection === item.toLowerCase() ? { boxShadow: 'inset 0 0 20px rgba(0, 255, 136, 0.05)' } : {}}
                 >
@@ -196,10 +196,10 @@ export function Navigation() {
 
               {/* Mobile Download CV */}
               <a
-                href="https://drive.google.com/file/d/1KhKMTYPnmB8trt7SPR0maj9U3UV3p91O/view?usp=sharing"
+                href="https://drive.google.com/drive/folders/1LBikNUREEVwR1hsi85QRSbUzQdF8gij0?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex sm:hidden items-center justify-center gap-2 px-4 py-3 min-h-[44px] mt-4 bg-[var(--neon-primary)] text-[var(--background)] font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+                className="flex sm:hidden items-center justify-center gap-2 px-4 py-3 min-h-[44px] mt-4 bg-[var(--neon-primary)] text-white font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--neon-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
                 aria-label="Download CV (opens in new tab)"
                 style={{ boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)' }}
               >
