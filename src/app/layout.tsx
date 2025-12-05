@@ -12,15 +12,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://heyitsdevit.com"),
+  metadataBase: new URL("https://itsdevit.web.id/"),
   title: {
     default: "Mobile Developer Portfolio | Devit Nur Azaqi",
-    template: "%s | HeyItsDevit",
+    template: "%s | Itsdevit",
   },
   description:
-    "HeyItsDevit - Professional Mobile Developer specializing in Flutter & React Native. Graduate of Telkom University with 2+ years experience building cross-platform apps. Expert in Clean Architecture, API Integration, and modern mobile development.",
+    "Itsdevit - Professional Mobile Developer specializing in Flutter & React Native. Graduate of Telkom University with 2+ years experience building cross-platform apps. Expert in Clean Architecture, API Integration, and modern mobile development.",
   keywords: [
-    "HeyItsDevit",
+    "Itsdevit",
     "Devit Nur Azaqi",
     "Mobile Developer",
     "Flutter Developer",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     "Android Developer",
     "iOS Developer",
   ],
-  authors: [{ name: "Devit Nur Azaqi", url: "https://heyitsdevit.com" }],
-  creator: "HeyItsDevit",
-  publisher: "HeyItsDevit",
+  authors: [{ name: "Devit Nur Azaqi", url: "https://itsdevit.web.id" }],
+  creator: "ItsDevit",
+  publisher: "ItsDevit",
   robots: {
     index: true,
     follow: true,
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://heyitsdevit.com",
-    siteName: "HeyItsDevit",
+    url: "https://itsdevit.web.id",
+    siteName: "ItsDevit",
     title: "Mobile Developer Portfolio | Devit Nur Azaqi",
     description:
       "Professional Mobile Developer specializing in Flutter & React Native. Building high-quality cross-platform applications with Clean Architecture.",
@@ -67,23 +67,23 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HeyItsDevit - Mobile Developer Portfolio",
+        alt: "ItsDevit - Mobile Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HeyItsDevit - Mobile Developer Portfolio",
+    title: "ItsDevit - Mobile Developer Portfolio",
     description:
       "Professional Mobile Developer specializing in Flutter & React Native. Building high-quality cross-platform applications.",
     images: ["/images/og-image.png"],
-    creator: "@HeyItsDevit",
+    creator: "@ItsDevit",
   },
   verification: {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://heyitsdevit.com",
+    canonical: "https://itsdevit.web.id",
   },
 };
 

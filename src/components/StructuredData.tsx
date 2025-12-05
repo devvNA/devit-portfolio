@@ -3,13 +3,13 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Devit Nur Azaqi",
-    alternateName: "HeyItsDevit",
-    url: "https://heyitsdevit.com",
-    image: "https://heyitsdevit.com/images/profile.png",
+    alternateName: "ItsDevit",
+    url: "https://itsdevit.web.id",
+    image: "https://sitsdevit.web.id/images/profile.png",
     sameAs: [
-      "https://github.com/heyitsdevit",
+      "https://github.com/itsdevit",
       "https://linkedin.com/in/devit-nur-azaqi",
-      "https://twitter.com/heyitsdevit",
+      "https://twitter.com/itsdevit",
     ],
     jobTitle: "Mobile Developer",
     worksFor: {
@@ -35,9 +35,9 @@ export function StructuredData() {
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "HeyItsDevit",
+    name: "ItsDevit",
     alternateName: "Devit Nur Azaqi Portfolio",
-    url: "https://heyitsdevit.com",
+    url: "https://itsdevit.web.id",
     description:
       "Professional Mobile Developer Portfolio showcasing Flutter and React Native projects",
     author: {
@@ -46,7 +46,7 @@ export function StructuredData() {
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://heyitsdevit.com/?s={search_term_string}",
+      target: "https://itsdevit.web.id/?s={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -59,11 +59,11 @@ export function StructuredData() {
     mainEntity: {
       "@type": "Person",
       name: "Devit Nur Azaqi",
-      alternateName: "HeyItsDevit",
+      alternateName: "ItsDevit",
       description: "Mobile Developer specializing in Flutter and React Native",
-      image: "https://heyitsdevit.com/images/profile.png",
+      image: "https://itsdevit.web.id/images/profile.png",
       sameAs: [
-        "https://github.com/heyitsdevit",
+        "https://github.com/devvNA",
         "https://linkedin.com/in/devit-nur-azaqi",
       ],
     },

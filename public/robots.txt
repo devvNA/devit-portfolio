@@ -1,5 +1,5 @@
 # Mobile Developer Portfolio
-# https://heyitsdevit.com
+# https://itsdevit.web.id
 
 User-agent: *
 Allow: /
@@ -8,7 +8,7 @@ Disallow: /_next/
 Disallow: /documents/
 
 # Sitemap
-Sitemap: https://heyitsdevit.com/sitemap.xml
+Sitemap: https://itsdevit.web.id/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 0

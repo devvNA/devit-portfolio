@@ -4,8 +4,8 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "HeyItsDevit - Mobile Developer Portfolio",
-    short_name: "HeyItsDevit",
+    name: "ItsDevit - Mobile Developer Portfolio",
+    short_name: "ItsDevit",
     description:
       "Professional Mobile Developer specializing in Flutter & React Native",
     start_url: "/",
